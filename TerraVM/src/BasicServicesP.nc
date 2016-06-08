@@ -17,7 +17,7 @@ module BasicServicesP{
 	provides interface BSTimer as BSTimerVM;
 	provides interface BSTimer as BSTimerAsync;
 	provides interface BSUpload;
-	provides interface BSRadio;
+	provides interface BSRadio;  
 
 	uses interface Boot as TOSBoot;
 
