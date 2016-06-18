@@ -3,7 +3,7 @@ PLATFORM=ix
 BUILDDIR ?= build/$(PLATFORM)
 MAIN_EXE = $(BUILDDIR)/main.exe
 GCC=gcc
-IXDIR = /home/gt-tei/workspacenew/nesCix/src
+IXDIR = /home/gt-tei/git/TerraIx/nesCix/src
 
 OPT_1 = -fnesc-include=tos  -topdir=$(IXDIR)  -fnesc-scheduler=TinySchedulerC,TinySchedulerC.TaskBasic,TaskBasic,TaskBasic,runTask,postTask  -o $(MAIN_EXE) -Os -fnesc-separator=__ -Wall -Wshadow -Wnesc-all -fnesc-cfile=build/ix/app.c --param max-inline-insns-single=100000 -fnesc-dump=wiring   -fnesc-dumpfile=build/ino/wiring-check.xml $(COMPONENT).nc -lm  -gcc=gcc  -fnesc-no-debug
 
