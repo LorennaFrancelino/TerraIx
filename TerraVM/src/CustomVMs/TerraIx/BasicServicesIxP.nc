@@ -176,80 +176,6 @@ implementation{
 	/* ******************************************************************************
 	 *                       Upload control functions
 	\* ******************************************************************************/
-	/**
-	 * Process a newProgVersion message, that is in a file
-	 * @param Data Message data
-	 */ 
- 	// 
-	void ReadVMXFile(char* file_name){
-		int BLOCK_SIZE = 24;
-		int LINE_SIZE = 1000;
-		
-		FILE *file;
-		newProgVersion_t* Data;
-		
-		int firstLine[BLOCK_SIZE];	
-		unsigned char line[LINE_SIZE];
-		unsigned int block[BLOCK_SIZE];
-		
-		int j=-1, k=0;
-		
-		dbg(APPNAME, "ReadVMXFile.\n");
-		file = fopen(file_name, "r");
-		if (file == NULL)
-			exit(EXIT_FAILURE);			
-		
-		// Stop the VM
-		signal BSUpload.stop();
-		signal BSUpload.resetMemory();
-		TViewer("vmstop",0,0);
-		// populando a estrutura com a primeira linha
-		fscanf(file, "%d%d%d%d%d%d%d%d%d", &Data->versionId, &Data->blockLen, &Data->blockStart, 
-		&Data->startProg, &Data->endProg, &Data->nTracks, &Data->wClocks, &Data->asyncs, &Data->wClock0);
-		
-		if (MoteID != BStation){
-			ProgVersion = Data->versionId;
-		} else {
-			ProgVersion++;
-		}
-		ProgBlockStart = Data->blockStart;
-		ProgBlockLen = Data->blockLen;
-		// Update environment values: StartProg addr, etc..
-		signal BSUpload.setEnv(Data);
-		// continuar
-		while(fgets(line,LINE_SIZE,file) != NULL){
-			if (j>=0){ // ignores first line
-				if(k<BLOCK_SIZE){
-					sscanf(line, "%x\n", &block[k]);
-					// printf("%2x\n", block[k]);// ok
-				}
-				k++;
-			}
-			j++;
-			if (k==BLOCK_SIZE){
-				// load section
-				j=0;
-				k=0;
-				// continuar com novo bloco	
-			}
-		}
-		// printf("valor de k: %d", k);
-		fclose(file);
-		if(k<BLOCK_SIZE && k!=0){ // if the last block doesn't have 24 bytes
-		// complete with zeros
-			while(k<BLOCK_SIZE){
-				block[k] = 0;
-				k++;
-			}
-			// load the section once it is completed	
-		}
-		/*
-		for(i=0; i<24; i++)
-		{
-		printf("%2x\n", block[i]);
-		}
-		 */
-	}
 	
 	/**
 	 * Process a received newProgVersion message
@@ -459,7 +385,82 @@ implementation{
 		} // end switch
 	}
 
- 
+ 		/**
+	 * Process a newProgVersion message, that is in a file
+	 * @param Data Message data
+	 */ 
+ 	// 
+	void ReadVMXFile(char* file_name){	
+		int LINE_SIZE = 1000;
+		FILE *file;
+		newProgBlock_t* blockData;	
+		newProgVersion_t* Data;
+		
+		unsigned char line[LINE_SIZE];
+		unsigned int block[BLOCK_SIZE];
+		
+		int j=-1, k=0;
+		
+		dbg(APPNAME, "ReadVMXFile.\n");
+		file = fopen(file_name, "r");
+		if (file == NULL)
+			exit(EXIT_FAILURE);			
+		
+		// Stop the VM
+		signal BSUpload.stop();
+		signal BSUpload.resetMemory();
+		TViewer("vmstop",0,0);
+		// populando a estrutura com a primeira linha
+		fscanf(file, "%d%d%d%d%d%d%d%d%d", &Data->startProg, &Data->endProg, &Data->nTracks, 
+		&Data->wClocks, &Data->asyncs, &Data->wClock0, &Data->gate0, &Data->inEvts, &Data->async0);
+		
+		if (MoteID != BStation){
+			ProgVersion = Data->versionId;
+		} else {
+			ProgVersion++;
+		}
+		ProgBlockStart = Data->blockStart;
+		ProgBlockLen = Data->blockLen;
+		// Update environment values: StartProg addr, etc..
+		signal BSUpload.setEnv(Data);
+		
+		while(fgets(line,LINE_SIZE,file) != NULL){
+			if (j>=0){ // ignores first line
+				if(k<BLOCK_SIZE){
+					sscanf(line, "%x\n", &block[k]);
+					// printf("%2x\n", block[k]);// ok
+					blockData->data[k] = (nx_uint8_t) block[k]; // verificar se isso funciona
+				}
+				k++;
+			}
+			j++;
+			if (k==BLOCK_SIZE){
+				// load section
+				blockData->versionId = 1;
+				blockData->blockId = 1;
+				procNewProgBlock(blockData); // mando um bloco
+				j=0;
+				k=0;
+				// continuar com novo bloco	
+			}
+		}
+		// printf("valor de k: %d", k);
+		fclose(file);
+		if(k<BLOCK_SIZE && k!=0){ // if the last block doesn't have 24 bytes
+		// complete with zeros
+			while(k<BLOCK_SIZE){
+				block[k] = 0;
+				k++;
+			}
+			// load the section once it is completed	
+		}
+		/*
+		for(i=0; i<24; i++)
+		{
+		printf("%2x\n", block[i]);
+		}
+		 */
+	}
 
 	/**
 	 * Custom Send Message - queue the message to send via radio
