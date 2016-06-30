@@ -1,0 +1,83 @@
+#include "TerraGrp.defs"
+
+pktype msgBS from msgBS_t with
+	var ubyte pwr;
+	var ubyte[15] nodes;
+end
+
+pktype msgGR from msgGR_t with
+	var ubyte pwr;
+end
+
+var msgBS dataBS;
+var msgGR dataGR;
+var msgGR dataGR2;
+
+var ubyte grId1 = 1;
+var ubyte grParam1 = 1;
+var group_t grp1;
+
+//groupInit(RegName,      Id,    param, nhops, status, elFlag, leader)
+groupInit(grp1     ,   grId1, grParam1,     1,   TRUE,   eOFF,      0);
+var ushort nodeId =getNodeId(); 
+var ulong delay =  ((nodeId-4) * 2000 * 10)+1000;
+var ubyte nodeMax=20;
+var ulong delay2 = nodeMax * (2000 * 10)+1000;
+
+dataBS.msgId=2;
+
+par do
+	await (delay)ms;
+	loop do
+		emit LEDS(2);
+		loop i, 8 do
+		  par/and do
+			loop x,15 do dataBS.nodes[x]=0; end
+			var ubyte idx = 7-i;
+			emit LED0(TOGGLE);
+			dataGR.pwr=idx;
+			dataBS.pwr=idx;
+			setRFPower(idx);
+			dataGR.grId = grId1;
+			dataGR.msgId = 1;
+			dataGR.node = BROADCAST;
+			emit SEND_GR(dataGR);
+			await SENDGR_DONE();with
+			par/or do
+				var ubyte pos=0;
+				loop do
+					dataGR = await REC_GR(grId1);
+					if dataGR.msgId == 2 then
+						dataBS.nodes[pos]=dataGR.node;
+						inc pos;
+					end
+				end
+			with
+				await 1000ms;
+			end
+			emit SEND_BS(dataBS);
+			await SENDBS_DONE();
+		  with
+		  	await 2000ms;
+		  end
+		end	
+		emit LEDS(4);
+		await (delay2)ms;
+	end
+with
+	loop do
+		dataGR2 = await REC_GR(grId1);
+		if dataGR2.msgId == 1 then
+			emit LED0(TOGGLE);
+			dataGR2.msgId = 2;
+			setRFPower(dataGR2.pwr);
+			var ulong delaySend = (random()%10)*20; 
+			await (delaySend)ms;
+			emit SEND_GR(dataGR2);
+		end
+	end
+end
+/*
+
+*/
+

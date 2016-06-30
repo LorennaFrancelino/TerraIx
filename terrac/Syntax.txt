@@ -1,0 +1,182 @@
+Program ::= { CfgBlk Block}
+
+CfgBlk ::= config CfgParams do CfgStmts end
+
+CfgParams ::= VMname `,' IDversion `,' Params
+VMname ::= name `:' ID
+IDversion ::= code `:' NUM `.' NUM `.' NUM
+Params ::= `{' ID_var `:'  NUM { `,' ID_var `:'  NUM } `}'
+
+CfgStmts ::= { _CfgStmts `;' }
+
+_CfgStmts ::= <empty-string>
+		| output void ID_ext NType NUM
+		| input  NType ID_ext IType NUM
+		| function BType ID_var `(' ArgList `)' NUM
+		| unsafe ID with ID { `,' ID }
+		| regtype  with 
+			var Type ID_var { `,' ID_var }
+			var Type payload { `,' ID_var }
+		
+		
+ArgList ::= Type { `,' Type}
+
+Block ::= { Stmt `;' }
+
+Stmt ::= <empty-string>
+        |  return [Exp]
+        |  break
+
+    /* Declarations */
+
+        /* variable, organisms, events, and pools */
+        | var Type ID_var [`=' SetExp] { `,' ID_var [`=' SetExp] }
+        | input (Type|TypeList) ID_ext { `,' ID_ext }
+        | output Type ID_ext { `,' ID_ext }
+        | event (Type|TypeList) ID_var { `,' ID_var }
+
+        /* functions */
+        | function [@rec] ParList `=>' Type ID_var
+              [ `do' Block `end' ]
+            where
+                ParList     ::= `(' ParListItem [ { `,' ParListItem } ] `)'
+                ParListItem ::= [@hold] Type [ID_var]
+
+        /* native symbols */
+        | native [@pure|@const|@nohold|@plain] Nat_list
+            where
+                Nat_list  ::= (Nat_type|Nat_func|Nat_var) { `,` (Nat_type|Nat_func|Nat_var) }
+                Nat_type  ::= ID_nat `=' NUM
+                Nat_func  ::= ID_nat `(' `)'
+                Nat_var   ::= ID_nat
+
+
+    /* Assignments */
+
+        | (Exp|VarList) `=' SetExp
+
+    /* Event handling */
+
+        /* await */
+        | (
+            await ID_ext |
+            await Exp    |
+            await (WCLOCKK|WCLOCKE)
+          ) [ until Exp ]
+        | await FOREVER
+
+        /* emit */
+        | emit Exp    [ `=>' (Exp | `(' ExpList `)')
+        | emit (WCLOCKK|WCLOCKE)
+        | emit ID_ext [ `=>' (Exp | `(' ExpList `)')
+
+    /* Flow control */
+
+        /* explicit block */
+        |  do Block end
+
+        /* conditional */
+        | if Exp then
+              Block
+          { else/if Exp then
+              Block }
+          [ else
+              Block ]
+          end
+
+        /* loops */
+        | loop [ [`(' Type `)'] ID_var [in Exp] ] do
+              Block
+          end
+        | every (Exp|VarList) in (WCLOCKK|WCLOCKE|ID_ext|Exp) do
+              Block
+          end
+
+        /* finalization */
+        | finalize [Exp `=' SetExp] with
+              Block
+          end
+
+        /* parallel compositions */
+        | (par/and|par/or|par) do
+              Block
+          with
+              Block
+          { with
+              Block }
+           end
+        | watching (WCLOCKK|WCLOCKE|ID_ext|Exp) do
+              Block
+          end
+
+        /* asynchronous execution */
+        | async [thread] [RefVarList] do
+              Block
+          end
+        | sync do
+              Block
+          end
+            where
+                RefVarList ::= `(' [`&'] ID_var { `,' [`&'] ID_var } `)'
+
+VarList ::= `(' ID_var  { `,' ID_var } `)'
+SetExp  ::= Exp | <do-end> | <if-then-else> | <loop>
+                | <every>  | <par> | <await> | <emit (output)>
+                | <thread> | <spawn> )
+
+WCLOCKK ::= [NUM h] [NUM min] [NUM s] [NUM ms] [NUM us]
+WCLOCKE ::= `(' Exp `)' (h|min|s|ms|us)
+
+ID      ::= <a-z, A-Z, 0-9, _> +
+ID_var  ::= ID    // beginning with a lowercase letter
+ID_ext  ::= ID    // all in uppercase, not beginning with a digit
+ID_cls  ::= ID    // beginning with an uppercase letter
+ID_nat  ::= ID    // beginning with an underscore
+
+Type    ::= ID_type ( {`*'} | `&' | `[' `]' | `[' NUM `]' )
+ID_type ::= ( ID_nat | ID_cls |
+            | void  | float |
+            | byte  | shot  | long  |
+            | ubyte | ushot | ulong |
+
+Exp ::= Prim
+        |  Exp (or|and) Exp
+        |  Exp (`|'|`^'|`&') Exp
+        |  Exp (`!='|`==') Exp
+        |  Exp (`<='|`<'|`>'|`>=') Exp
+        |  Exp (`<<'|`>>') Exp
+        |  Exp (`+'|`-') Exp
+        |  Exp (`*'|`/'|`%') Exp
+        |  not Exp
+        |  `&' Exp
+        |  (`-'|`+') Exp
+        |  `~' Exp
+        |  `*' Exp
+        |  `(' Type `)' Exp
+        |  Exp `(' [ExpList] `)' [finalize with Block end]
+        |  Exp `[' Exp `]'
+        |  Exp (`.'|`:') ID
+
+Prim ::= `(' Exp `)'
+        |  sizeof `(' (Type|Exp) `)'
+        |  ID_var | ID_nat
+        |  null | NUM | String
+        |  global | this | outer
+        |  (call | call/rec) Exp
+
+/* The operators follow the same precedence of C. */
+
+    or              /* lowest priority */
+    and
+    |
+    ^
+    &
+    !=    ==
+    <=    >=    <     >
+    >>    <<
+    +     -                // binary
+    *     /     %
+    not     &
+    +     -                // unary
+    <>                     // typecast
+    ()    []    :    .     // call, index 
