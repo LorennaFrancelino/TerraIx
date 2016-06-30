@@ -1,0 +1,700 @@
+161 699 4 3 0 0 24 5 24
+00 | 00000 0 track 0
+00 | 00001 0
+00 | 00002 0
+00 | 00003 0
+00 | 00004 0 track 1
+00 | 00005 0
+00 | 00006 0
+00 | 00007 0
+00 | 00008 0 track 2
+00 | 00009 0
+00 | 00010 0
+00 | 00011 0
+00 | 00012 0 track 3
+00 | 00013 0
+00 | 00014 0
+00 | 00015 0
+00 | 00016 0 track 4
+00 | 00017 0
+00 | 00018 0
+00 | 00019 0
+00 | 00020 0000 wClock 0
+00 | 00021 0001
+00 | 00022 0002
+00 | 00023 0003
+00 | 00024 0004
+00 | 00025 0005
+00 | 00026 0006
+00 | 00027 0007
+00 | 00028 0008 wClock 1
+00 | 00029 0009
+00 | 00030 0010
+00 | 00031 0011
+00 | 00032 0012
+00 | 00033 0013
+00 | 00034 0014
+00 | 00035 0015
+00 | 00036 0016 wClock 2
+00 | 00037 0017
+00 | 00038 0018
+00 | 00039 0019
+00 | 00040 0020
+00 | 00041 0021
+00 | 00042 0022
+00 | 00043 0023
+00 | 00044 0024 inEvt 005 : TEMP
+00 | 00045 0025           : 01 gates
+00 | 00046 0026
+00 | 00047 0027
+00 | 00048 0028 inEvt 041 : SEND_DONE
+00 | 00049 0029           : 02 gates
+00 | 00050 0030
+00 | 00051 0031
+00 | 00052 0032
+00 | 00053 0033
+00 | 00054 0034 inEvt 043 : SEND_DONE_ACK
+00 | 00055 0035           : 01 gates
+00 | 00056 0036
+00 | 00057 0037
+00 | 00058 0038 inEvt 044 : RECEIVE()
+00 | 00059 0039           : 02 gates
+00 | 00060 0040
+00 | 00061 0041
+00 | 00062 0042
+00 | 00063 0043
+00 | 00064 0044
+00 | 00065 0045
+00 | 00066 0046 inEvt 046 : Q_READY
+00 | 00067 0047           : 01 gates
+00 | 00068 0048
+00 | 00069 0049
+00 | 00070 0050 $ret:1, 
+00 | 00071 0051 myNodeId:2, 
+00 | 00072 0052 
+00 | 00073 0053 dadNodeId:2, 
+00 | 00074 0054 
+00 | 00075 0055 jump:4, 
+00 | 00076 0056 
+00 | 00077 0057 
+00 | 00078 0058 
+00 | 00079 0059 childNumber:1, 
+00 | 00080 0060 childNodeId:20, 
+00 | 00081 0061 
+00 | 00082 0062 
+00 | 00083 0063 
+00 | 00084 0064 
+00 | 00085 0065 
+00 | 00086 0066 
+00 | 00087 0067 
+00 | 00088 0068 
+00 | 00089 0069 
+00 | 00090 0070 
+00 | 00091 0071 
+00 | 00092 0072 
+00 | 00093 0073 
+00 | 00094 0074 
+00 | 00095 0075 
+00 | 00096 0076 
+00 | 00097 0077 
+00 | 00098 0078 
+00 | 00099 0079 
+00 | 00100 0080 msgId:1, 
+00 | 00101 0081 globalMsgId:2, 
+00 | 00102 0082 
+00 | 00103 0083 msgIdAck:20, 
+00 | 00104 0084 
+00 | 00105 0085 
+00 | 00106 0086 
+00 | 00107 0087 
+00 | 00108 0088 
+00 | 00109 0089 
+00 | 00110 0090 
+00 | 00111 0091 
+00 | 00112 0092 
+00 | 00113 0093 
+00 | 00114 0094 
+00 | 00115 0095 
+00 | 00116 0096 
+00 | 00117 0097 
+00 | 00118 0098 
+00 | 00119 0099 
+00 | 00120 0100 
+00 | 00121 0101 
+00 | 00122 0102 
+00 | 00123 0103 msgRadio:25, 
+00 | 00124 0104 
+00 | 00125 0105 
+00 | 00126 0106 
+00 | 00127 0107 
+00 | 00128 0108 
+00 | 00129 0109 
+00 | 00130 0110 
+00 | 00131 0111 
+00 | 00132 0112 
+00 | 00133 0113 
+00 | 00134 0114 
+00 | 00135 0115 
+00 | 00136 0116 
+00 | 00137 0117 
+00 | 00138 0118 
+00 | 00139 0119 
+00 | 00140 0120 
+00 | 00141 0121 
+00 | 00142 0122 
+00 | 00143 0123 
+00 | 00144 0124 
+00 | 00145 0125 
+00 | 00146 0126 
+00 | 00147 0127 
+00 | 00148 0128 ack:1, 
+00 | 00149 0129 stat:1, 
+00 | 00150 0130 i:1, ParAnd_flag[2], 
+00 | 00151 0131 __i_0x91f84b8:1, 
+00 | 00152 0132 found:1, 
+00 | 00153 0133 i:4, 
+00 | 00154 0134 
+00 | 00155 0135 
+00 | 00156 0136 
+00 | 00157 0137 __i_0x928bfa0:4, 
+00 | 00158 0138 
+00 | 00159 0139 
+00 | 00160 0140 
+d1 | 00161 d1 set_c ushort 24 1281          | config gate TEMP with 1 await(s) - 0x0501 = 1281
+18 | 00162 18 
+05 | 00163 05 
+01 | 00164 01 
+d1 | 00165 d1 set_c ushort 28 10498         | config gate SEND_DONE with 2 await(s) - 0x2902 = 10498
+1c | 00166 1c 
+29 | 00167 29 
+02 | 00168 02 
+d1 | 00169 d1 set_c ushort 34 11009         | config gate SEND_DONE_ACK with 1 await(s) - 0x2b01 = 11009
+22 | 00170 22 
+2b | 00171 2b 
+01 | 00172 01 
+d1 | 00173 d1 set_c ushort 38 11394         | config gate RECEIVE() with 2 await(s) - 0x2c82 = 11394
+26 | 00174 26 
+2c | 00175 2c 
+82 | 00176 82 
+d1 | 00177 d1 set_c ushort 46 11777         | config gate Q_READY with 1 await(s) - 0x2e01 = 11777
+2e | 00178 2e 
+2e | 00179 2e 
+01 | 00180 01 
+24 | 00181 24 func 0                        | func getNodeId
+00 | 00182 00 
+a1 | 00183 a1 pop ushort 51                 | pop myNodeId
+33 | 00184 33 
+40 | 00185 40 push_c 1                      | push 1
+01 | 00186 01 
+04 | 00187 04 neg                           | neg
+a1 | 00188 a1 pop ushort 53                 | pop dadNodeId
+35 | 00189 35 
+40 | 00190 40 push_c 1                      | push 1
+01 | 00191 01 
+04 | 00192 04 neg                           | neg
+a2 | 00193 a2 pop ulong 55                  | pop jump
+37 | 00194 37 
+c0 | 00195 c0 set_c ubyte 59 0              | childNumber = 0
+3b | 00196 3b 
+00 | 00197 00 
+c0 | 00198 c0 set_c ubyte 80 0              | msgId = 0
+50 | 00199 50 
+00 | 00200 00 
+c1 | 00201 c1 set_c ushort 81 1             | globalMsgId = 1
+51 | 00202 51 
+01 | 00203 01 
+c0 | 00204 c0 set_c ubyte 130 0             | i = 0
+82 | 00205 82 
+00 | 00206 00 
+c0 | 00207 c0 set_c ubyte 131 10            | __i_0x91f84b8 = 10
+83 | 00208 83 
+0a | 00209 0a 
+90 | 00210 90 push_v ubyte 131              | push __i_0x91f84b8:ubyte
+83 | 00211 83 
+90 | 00212 90 push_v ubyte 130              | push i:ubyte
+82 | 00213 82 
+11 | 00214 11 gte                           | gte
+4f | 00215 4f ifelse 20 21                  | ifelse True_20 False_21
+00 | 00216 .00 addr:220
+dc | 00217 .14 
+00 | 00218 .00 addr:228
+e4 | 00219 .15 
+3d | 00220 3d tkins_z 1 6 15                | insert track Loop_out_15 tree 6
+86 | 00221 86 
+00 | 00222 .00 addr:241
+f1 | 00223 .0f 
+01 | 00224 01 end                           | end
+39 | 00225 39 exec 22                       | goto  22
+00 | 00226 .00 addr:210
+d2 | 00227 .0d 
+2b | 00228 2b setarr_vc ushort 83 ubyte 130 10 0  | msgIdAck[i] = 0
+10 | 00229 10 
+00 | 00230 00 
+53 | 00231 53 
+82 | 00232 82 
+0a | 00233 0a 
+00 | 00234 00 
+40 | 00235 40 push_c 130                    | push &i
+82 | 00236 82 
+60 | 00237 60 inc ubyte                     | inc ubyte
+39 | 00238 39 exec 22                       | goto  22
+00 | 00239 .00 addr:210
+d2 | 00240 .0d 
+40 | 00241 40 push_c 11                     | push 11
+0b | 00242 0b 
+91 | 00243 91 push_v ushort 51              | push myNodeId:ushort
+33 | 00244 33 
+0f | 00245 0f eq                            | eq
+4f | 00246 4f ifelse 40 41                  | ifelse True_40 False_41
+00 | 00247 .00 addr:251
+fb | 00248 .28 
+01 | 00249 .00 addr:291
+23 | 00250 .29 
+29 | 00251 29 clken_c 0 3000 24             | clock enable Awake_3000_24 3000msec
+03 | 00252 03 
+00 | 00253 00 
+0b | 00254 0b 
+b8 | 00255 b8 
+01 | 00256 .00 addr:259
+03 | 00257 .18 
+01 | 00258 01 end                           | end
+c1 | 00259 c1 set_c ushort 53 1             | dadNodeId = 1
+35 | 00260 35 
+01 | 00261 01 
+c2 | 00262 c2 set_c ulong 55 1              | jump = 1
+37 | 00263 37 
+01 | 00264 01 
+2a | 00265 2a set_v ushort 104 ushort 51    | msgRadio.source = myNodeId
+11 | 00266 11 
+68 | 00267 68 
+33 | 00268 33 
+d1 | 00269 d1 set_c ushort 106 0xffff       | msgRadio.target = 0xffff
+6a | 00270 6a 
+ff | 00271 ff 
+ff | 00272 ff 
+c0 | 00273 c0 set_c ubyte 103 1             | msgRadio.type = 1
+67 | 00274 67 
+01 | 00275 01 
+40 | 00276 40 push_c 1                      | push 1
+01 | 00277 01 
+92 | 00278 92 push_v ulong 55               | push jump:ulong
+37 | 00279 37 
+06 | 00280 06 add                           | add
+a2 | 00281 a2 pop ulong 120                 | pop msgRadio.d32[0]
+78 | 00282 78 
+b1 | 00283 b1 outevt_v 40 103               | emit SEND len=25 var=msgRadio
+28 | 00284 28 
+67 | 00285 67 
+d1 | 00286 d1 set_c ushort 30 30            | await SEND_DONE[0]
+1e | 00287 1e 
+01 | 00288 .00 addr:337
+51 | 00289 .2a 
+01 | 00290 01 end                           | end
+40 | 00291 40 push_c 1                      | push 1
+01 | 00292 01 
+a0 | 00293 a0 pop ubyte 40                  | evt RECEIVE() auxId = pop
+28 | 00294 28 
+d1 | 00295 d1 set_c ushort 41 31            | await RECEIVE()[0]
+29 | 00296 29 
+01 | 00297 .00 addr:300
+2c | 00298 .1f 
+01 | 00299 01 end                           | end
+5c | 00300 5c getextdt_v 103 25             | getExtData msgRadio 25
+67 | 00301 67 
+19 | 00302 19 
+2a | 00303 2a set_v ushort 53 ushort 104    | dadNodeId = msgRadio.source
+11 | 00304 11 
+35 | 00305 35 
+68 | 00306 68 
+2a | 00307 2a set_v ulong 55 ulong 120      | jump = msgRadio.d32[0]
+22 | 00308 22 
+37 | 00309 37 
+78 | 00310 78 
+40 | 00311 40 push_c 1                      | push 1
+01 | 00312 01 
+92 | 00313 92 push_v ulong 55               | push jump:ulong
+37 | 00314 37 
+06 | 00315 06 add                           | add
+a2 | 00316 a2 pop ulong 120                 | pop msgRadio.d32[0]
+78 | 00317 78 
+2a | 00318 2a set_v ushort 104 ushort 51    | msgRadio.source = myNodeId
+11 | 00319 11 
+68 | 00320 68 
+33 | 00321 33 
+d1 | 00322 d1 set_c ushort 106 0xffff       | msgRadio.target = 0xffff
+6a | 00323 6a 
+ff | 00324 ff 
+ff | 00325 ff 
+c0 | 00326 c0 set_c ubyte 103 1             | msgRadio.type = 1
+67 | 00327 67 
+01 | 00328 01 
+b1 | 00329 b1 outevt_v 40 103               | emit SEND len=25 var=msgRadio
+28 | 00330 28 
+67 | 00331 67 
+d1 | 00332 d1 set_c ushort 32 39            | await SEND_DONE[1]
+20 | 00333 20 
+01 | 00334 .00 addr:337
+51 | 00335 .2a 
+01 | 00336 01 end                           | end
+40 | 00337 40 push_c 1                      | push 1
+01 | 00338 01 
+04 | 00339 04 neg                           | neg
+91 | 00340 91 push_v ushort 53              | push dadNodeId:ushort
+35 | 00341 35 
+10 | 00342 10 neq                           | neq
+4f | 00343 4f ifelse 46 47                  | ifelse True_46 EndIf_47
+01 | 00344 .00 addr:348
+5c | 00345 .2e 
+01 | 00346 .00 addr:354
+62 | 00347 .2f 
+58 | 00348 58 outevt_c 6 1                  | emit LED0 len=1 const=1
+06 | 00349 06 
+01 | 00350 01 
+39 | 00351 39 exec 47                       | goto  47
+01 | 00352 .00 addr:354
+62 | 00353 .2f 
+89 | 00354 89 tkins_max 0 48                | insert track ParEver_sub_1_48
+01 | 00355 .00 addr:364
+6c | 00356 .30 
+89 | 00357 89 tkins_max 0 49                | insert track ParEver_sub_2_49
+01 | 00358 .00 addr:457
+c9 | 00359 .31 
+89 | 00360 89 tkins_max 0 50                | insert track ParEver_sub_3_50
+02 | 00361 .00 addr:597
+55 | 00362 .32 
+01 | 00363 01 end                           | end
+48 | 00364 48 memclr 130 2                  | clear gates from addr 130 to addr 131
+82 | 00365 82 
+02 | 00366 02 
+89 | 00367 89 tkins_max 0 57                | insert track ParAnd_sub_1_57
+01 | 00368 .00 addr:374
+76 | 00369 .39 
+89 | 00370 89 tkins_max 0 58                | insert track ParAnd_sub_2_58
+01 | 00371 .00 addr:427
+ab | 00372 .3a 
+01 | 00373 01 end                           | end
+92 | 00374 92 push_v ulong 55               | push jump:ulong
+37 | 00375 37 
+40 | 00376 40 push_c 3                      | push 3
+03 | 00377 03 
+08 | 00378 08 mult                          | mult
+27 | 00379 27 clken_e 1 1 62                | clock enable Awake_exp_62 (stack)s
+11 | 00380 11 
+01 | 00381 01 
+01 | 00382 .00 addr:385
+81 | 00383 .3e 
+01 | 00384 01 end                           | end
+26 | 00385 26 outevt_z 9                    | emit REQ_TEMP
+09 | 00386 09 
+d1 | 00387 d1 set_c ushort 26 65            | await TEMP[0]
+1a | 00388 1a 
+01 | 00389 .00 addr:392
+88 | 00390 .41 
+01 | 00391 01 end                           | end
+40 | 00392 40 push_c 112                    | push_c msgRadio.d16[0]
+70 | 00393 70 
+34 | 00394 34 getextdt_e 2                  | getExtData stack len=2
+02 | 00395 02 
+2a | 00396 2a set_v ushort 114 ushort 51    | msgRadio.d16[1] = myNodeId
+11 | 00397 11 
+72 | 00398 72 
+33 | 00399 33 
+2a | 00400 2a set_v ubyte 108 ubyte 59      | msgRadio.d8[0] = childNumber
+00 | 00401 00 
+6c | 00402 6c 
+3b | 00403 3b 
+2a | 00404 2a set_v ubyte 109 ubyte 80      | msgRadio.d8[1] = msgId
+00 | 00405 00 
+6d | 00406 6d 
+50 | 00407 50 
+2a | 00408 2a set_v ulong 120 ulong 55      | msgRadio.d32[0] = jump
+22 | 00409 22 
+78 | 00410 78 
+37 | 00411 37 
+40 | 00412 40 push_c 80                     | push &msgId
+50 | 00413 50 
+60 | 00414 60 inc ubyte                     | inc ubyte
+40 | 00415 40 push_c 103                    | push_c &msgRadio:usrMsg
+67 | 00416 67 
+24 | 00417 24 func 10                       | func qPut
+0a | 00418 0a 
+a0 | 00419 a0 pop ubyte 129                 | pop stat
+81 | 00420 81 
+c0 | 00421 c0 set_c ubyte 130 1             | open gate 1
+82 | 00422 82 
+01 | 00423 01 
+39 | 00424 39 exec 59                       | goto  59
+01 | 00425 .00 addr:441
+b9 | 00426 .3b 
+29 | 00427 29 clken_c 2 33000 70            | clock enable Awake_33000_70 33000msec
+03 | 00428 03 
+02 | 00429 02 
+80 | 00430 80 
+e8 | 00431 e8 
+01 | 00432 .00 addr:435
+b3 | 00433 .46 
+01 | 00434 01 end                           | end
+c0 | 00435 c0 set_c ubyte 131 1             | open gate 2
+83 | 00436 83 
+01 | 00437 01 
+39 | 00438 39 exec 59                       | goto  59
+01 | 00439 .00 addr:441
+b9 | 00440 .3b 
+3a | 00441 3a chkret 130                    | ParAnd_out_60 -- if (gate 0 == 0) PC=PC+1
+82 | 00442 82 
+01 | 00443 01 end                           | end
+3a | 00444 3a chkret 131                    | ParAnd_out_60 -- if (gate 1 == 0) PC=PC+1
+83 | 00445 83 
+01 | 00446 01 end                           | end
+39 | 00447 39 exec 54                       | goto  54
+01 | 00448 .00 addr:364
+6c | 00449 .36 
+48 | 00450 48 memclr 8 16                   | clear WClocks gates from 1 to 3
+08 | 00451 08 
+10 | 00452 10 
+48 | 00453 48 memclr 26 2                   | clear EXT gates for TEMP
+1a | 00454 1a 
+02 | 00455 02 
+01 | 00456 01 end                           | end
+40 | 00457 40 push_c 2                      | push 2
+02 | 00458 02 
+a0 | 00459 a0 pop ubyte 43                  | evt RECEIVE() auxId = pop
+2b | 00460 2b 
+d1 | 00461 d1 set_c ushort 44 74            | await RECEIVE()[1]
+2c | 00462 2c 
+01 | 00463 .00 addr:466
+d2 | 00464 .4a 
+01 | 00465 01 end                           | end
+5c | 00466 5c getextdt_v 103 25             | getExtData msgRadio 25
+67 | 00467 67 
+19 | 00468 19 
+c0 | 00469 c0 set_c ubyte 132 0             | found = 0
+84 | 00470 84 
+00 | 00471 00 
+c2 | 00472 c2 set_c ulong 133 0             | i = 0
+85 | 00473 85 
+00 | 00474 00 
+2a | 00475 2a set_v ulong 137 ubyte 59      | __i_0x928bfa0 = childNumber
+20 | 00476 20 
+89 | 00477 89 
+3b | 00478 3b 
+92 | 00479 92 push_v ulong 137              | push __i_0x928bfa0:ulong
+89 | 00480 89 
+92 | 00481 92 push_v ulong 133              | push i:ulong
+85 | 00482 85 
+11 | 00483 11 gte                           | gte
+4f | 00484 4f ifelse 98 99                  | ifelse True_98 False_99
+01 | 00485 .00 addr:489
+e9 | 00486 .62 
+01 | 00487 .00 addr:497
+f1 | 00488 .63 
+3d | 00489 3d tkins_z 1 11 81               | insert track Loop_out_81 tree 11
+8b | 00490 8b 
+02 | 00491 .00 addr:555
+2b | 00492 .51 
+01 | 00493 01 end                           | end
+39 | 00494 39 exec 100                      | goto  100
+01 | 00495 .00 addr:479
+df | 00496 .4f 
+91 | 00497 91 push_v ushort 104             | push msgRadio.source [Optm:: push_c addr + deref]
+68 | 00498 68 
+32 | 00499 32 pusharr_v ushort 60 ulong 133 10  | pusharr_v &childNodeId[i]
+12 | 00500 12 
+3c | 00501 3c 
+85 | 00502 85 
+0a | 00503 0a 
+71 | 00504 71 deref ushort                  | deref ushort
+0f | 00505 0f eq                            | eq
+4f | 00506 4f ifelse 96 97                  | ifelse True_96 EndIf_97
+01 | 00507 .00 addr:511
+ff | 00508 .60 
+02 | 00509 .00 addr:549
+25 | 00510 .61 
+c0 | 00511 c0 set_c ubyte 132 1             | found = 1
+84 | 00512 84 
+01 | 00513 01 
+32 | 00514 32 pusharr_v ushort 83 ulong 133 10  | pusharr_v &msgIdAck[i]
+12 | 00515 12 
+53 | 00516 53 
+85 | 00517 85 
+0a | 00518 0a 
+71 | 00519 71 deref ushort                  | deref ushort
+91 | 00520 91 push_v ushort 116             | push_c msgRadio.d16[2] [Optm:: push_c addr + deref]
+74 | 00521 74 
+13 | 00522 13 gt                            | gt
+40 | 00523 40 push_c 0                      | push 0
+00 | 00524 00 
+91 | 00525 91 push_v ushort 116             | push_c msgRadio.d16[2] [Optm:: push_c addr + deref]
+74 | 00526 74 
+0f | 00527 0f eq                            | eq
+15 | 00528 15 lor                           | lor
+4f | 00529 4f ifelse 94 95                  | ifelse True_94 EndIf_95
+02 | 00530 .00 addr:534
+16 | 00531 .5e 
+02 | 00532 .00 addr:549
+25 | 00533 .61 
+2c | 00534 2c setarr_vv ushort 83 ulong 133 10 ushort 116  | msgIdAck[i] = msgRadio.d16[2]
+12 | 00535 12 
+01 | 00536 01 
+53 | 00537 53 
+85 | 00538 85 
+0a | 00539 0a 
+74 | 00540 74 
+3d | 00541 3d tkins_z 1 11 81               | insert track Loop_out_81 tree 11
+8b | 00542 8b 
+02 | 00543 .00 addr:555
+2b | 00544 .51 
+01 | 00545 01 end                           | end
+39 | 00546 39 exec 95                       | goto  95
+02 | 00547 .00 addr:549
+25 | 00548 .61 
+40 | 00549 40 push_c 133                    | push &i
+85 | 00550 85 
+62 | 00551 62 inc ulong                     | inc ulong
+39 | 00552 39 exec 100                      | goto  100
+01 | 00553 .00 addr:479
+df | 00554 .4f 
+40 | 00555 40 push_c 10                     | push 10
+0a | 00556 0a 
+90 | 00557 90 push_v ubyte 59               | push childNumber:ubyte
+3b | 00558 3b 
+14 | 00559 14 lt                            | lt
+40 | 00560 40 push_c 0                      | push 0
+00 | 00561 00 
+90 | 00562 90 push_v ubyte 132              | push found:ubyte
+84 | 00563 84 
+0f | 00564 0f eq                            | eq
+16 | 00565 16 land                          | land
+4f | 00566 4f ifelse 104 105                | ifelse True_104 EndIf_105
+02 | 00567 .00 addr:571
+3b | 00568 .68 
+02 | 00569 .00 addr:584
+48 | 00570 .69 
+2c | 00571 2c setarr_vv ushort 60 ubyte 59 10 ushort 104  | childNodeId[childNumber] = msgRadio.source
+10 | 00572 10 
+01 | 00573 01 
+3c | 00574 3c 
+3b | 00575 3b 
+0a | 00576 0a 
+68 | 00577 68 
+40 | 00578 40 push_c 59                     | push &childNumber
+3b | 00579 3b 
+60 | 00580 60 inc ubyte                     | inc ubyte
+39 | 00581 39 exec 105                      | goto  105
+02 | 00582 .00 addr:584
+48 | 00583 .69 
+40 | 00584 40 push_c 103                    | push_c &msgRadio:usrMsg
+67 | 00585 67 
+24 | 00586 24 func 10                       | func qPut
+0a | 00587 0a 
+a0 | 00588 a0 pop ubyte 129                 | pop stat
+81 | 00589 81 
+39 | 00590 39 exec 71                       | goto  71
+01 | 00591 .00 addr:457
+c9 | 00592 .47 
+48 | 00593 48 memclr 40 2                   | clear EXT gates for RECEIVE()
+28 | 00594 28 
+02 | 00595 02 
+01 | 00596 01 end                           | end
+d1 | 00597 d1 set_c ushort 48 109           | await Q_READY[0]
+30 | 00598 30 
+02 | 00599 .00 addr:602
+5a | 00600 .6d 
+01 | 00601 01 end                           | end
+40 | 00602 40 push_c 103                    | push_c &msgRadio:usrMsg
+67 | 00603 67 
+24 | 00604 24 func 11                       | func qGet
+0b | 00605 0b 
+a0 | 00606 a0 pop ubyte 129                 | pop stat
+81 | 00607 81 
+2a | 00608 2a set_v ushort 116 ushort 81    | msgRadio.d16[2] = globalMsgId
+11 | 00609 11 
+74 | 00610 74 
+51 | 00611 51 
+40 | 00612 40 push_c 81                     | push &globalMsgId
+51 | 00613 51 
+61 | 00614 61 inc ushort                    | inc ushort
+2a | 00615 2a set_v ushort 104 ushort 51    | msgRadio.source = myNodeId
+11 | 00616 11 
+68 | 00617 68 
+33 | 00618 33 
+2a | 00619 2a set_v ushort 106 ushort 53    | msgRadio.target = dadNodeId
+11 | 00620 11 
+6a | 00621 6a 
+35 | 00622 35 
+c0 | 00623 c0 set_c ubyte 103 2             | msgRadio.type = 2
+67 | 00624 67 
+02 | 00625 02 
+b1 | 00626 b1 outevt_v 41 103               | emit SEND_ACK len=25 var=msgRadio
+29 | 00627 29 
+67 | 00628 67 
+d1 | 00629 d1 set_c ushort 36 122           | await SEND_DONE_ACK[0]
+24 | 00630 24 
+02 | 00631 .00 addr:634
+7a | 00632 .7a 
+01 | 00633 01 end                           | end
+5c | 00634 5c getextdt_v 128 1              | getExtData ack 1
+80 | 00635 80 
+01 | 00636 01 
+40 | 00637 40 push_c 0                      | push 0
+00 | 00638 00 
+90 | 00639 90 push_v ubyte 128              | push ack:ubyte
+80 | 00640 80 
+10 | 00641 10 neq                           | neq
+4f | 00642 4f ifelse 124 125                | ifelse True_124 EndIf_125
+02 | 00643 .00 addr:647
+87 | 00644 .7c 
+02 | 00645 .00 addr:655
+8f | 00646 .7d 
+3d | 00647 3d tkins_z 1 13 121              | insert track Loop_out_121 tree 13
+8d | 00648 8d 
+02 | 00649 .00 addr:661
+95 | 00650 .79 
+01 | 00651 01 end                           | end
+39 | 00652 39 exec 125                      | goto  125
+02 | 00653 .00 addr:655
+8f | 00654 .7d 
+b1 | 00655 b1 outevt_v 41 103               | emit SEND_ACK len=25 var=msgRadio
+29 | 00656 29 
+67 | 00657 67 
+39 | 00658 39 exec 119                      | goto  119
+02 | 00659 .00 addr:629
+75 | 00660 .77 
+48 | 00661 48 memclr 36 2                   | clear EXT gates for SEND_DONE_ACK
+24 | 00662 24 
+02 | 00663 02 
+40 | 00664 40 push_c 0                      | push 0
+00 | 00665 00 
+24 | 00666 24 func 12                       | func qSize
+0c | 00667 0c 
+0f | 00668 0f eq                            | eq
+4f | 00669 4f ifelse 129 130                | ifelse True_129 EndIf_130
+02 | 00670 .00 addr:674
+a2 | 00671 .81 
+02 | 00672 .00 addr:602
+5a | 00673 .6e 
+3d | 00674 3d tkins_z 1 10 112              | insert track Loop_out_112 tree 10
+8a | 00675 8a 
+02 | 00676 .00 addr:682
+aa | 00677 .70 
+01 | 00678 01 end                           | end
+39 | 00679 39 exec 130                      | goto  130
+02 | 00680 .00 addr:602
+5a | 00681 .6e 
+48 | 00682 48 memclr 36 2                   | clear EXT gates for SEND_DONE_ACK
+24 | 00683 24 
+02 | 00684 02 
+39 | 00685 39 exec 106                      | goto  106
+02 | 00686 .00 addr:597
+55 | 00687 .6a 
+48 | 00688 48 memclr 36 2                   | clear EXT gates for SEND_DONE_ACK
+24 | 00689 24 
+02 | 00690 02 
+48 | 00691 48 memclr 48 2                   | clear EXT gates for Q_READY
+30 | 00692 30 
+02 | 00693 02 
+01 | 00694 01 end                           | end
+48 | 00695 48 memclr 0 24                   | clear WClocks gates from 0 to 3
+00 | 00696 00 
+18 | 00697 18 
+01 | 00698 01 end                           | end

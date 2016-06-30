@@ -1,0 +1,79 @@
+#include "TerraIno.defs"
+
+
+var ubyte stat;
+var ubyte[10] logData;
+
+stat=pinMode(D37,OUTPUT);
+stat=pinMode(D23,OUTPUT);
+stat=pinMode(D24,OUTPUT);
+stat=interruptFallingEdge(I0);
+
+
+pktype usrMsg2_t from radioMsg with
+	var ubyte d8_1;
+	var ubyte d8_2;
+	var ubyte d8_3;
+	var ubyte d8_4;
+	var ushort d16_1;
+	var ushort d16_2;
+	var ushort d16_3;
+	var ushort d16_4;
+	var ulong d32_1;
+	var ulong d32_2;
+end
+var usrMsg2_t msg;
+var usrMsg2_t msg2;
+msg.target=3;
+msg.d8_1=0;
+
+par do
+	loop do
+		await 250ms;
+		stat=digitalToggle(D37);
+		//logData[0]='A';
+		//stat=logS(logData,1);
+	end
+with
+	loop do
+		await 500ms;
+		stat=digitalToggle(D23);
+//		logData[0]=0x42;
+//		stat=logS(logData,1);
+	end
+with
+	loop do
+		await 1s;
+//		stat=digitalToggle(D24);
+//		logData[0]=0x43;
+//		stat=logS(logData,1);
+	end
+with
+	var float temp=0.0;
+	loop do
+		//await INT_FIRED();
+		stat=digitalToggle(D13);//(D24);
+		await 1s; //50ms;
+		msg.target=1; // afb
+		inc msg.d8_1;
+		temp = temp + 0.00033333333333333333;
+		msg.d16_1 = <ushort>(temp*1000);
+		emit SEND(msg);
+		stat=await SEND_DONE();
+		if (stat==TRUE) then
+			logData[0]='T';
+		else
+			logData[0]='F';
+		end
+		stat=logS(logData,1);
+	end
+with
+	loop do
+		msg2=await RECEIVE();
+		logData[0] = '0' + (msg2.d8_1%100)/10;
+		logData[1] = '0' + (msg2.d8_1%10)/1;
+		logData[2] = '.';
+		stat=logS(logData,3);
+	end
+end
+

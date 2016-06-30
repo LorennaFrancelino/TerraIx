@@ -1,0 +1,618 @@
+174 617 5 5 0 0 40 3 40
+00 | 00000 0 track 0
+00 | 00001 0
+00 | 00002 0
+00 | 00003 0
+00 | 00004 0 track 1
+00 | 00005 0
+00 | 00006 0
+00 | 00007 0
+00 | 00008 0 track 2
+00 | 00009 0
+00 | 00010 0
+00 | 00011 0
+00 | 00012 0 track 3
+00 | 00013 0
+00 | 00014 0
+00 | 00015 0
+00 | 00016 0 track 4
+00 | 00017 0
+00 | 00018 0
+00 | 00019 0
+00 | 00020 0 track 5
+00 | 00021 0
+00 | 00022 0
+00 | 00023 0
+00 | 00024 0000 wClock 0
+00 | 00025 0001
+00 | 00026 0002
+00 | 00027 0003
+00 | 00028 0004
+00 | 00029 0005
+00 | 00030 0006
+00 | 00031 0007
+00 | 00032 0008 wClock 1
+00 | 00033 0009
+00 | 00034 0010
+00 | 00035 0011
+00 | 00036 0012
+00 | 00037 0013
+00 | 00038 0014
+00 | 00039 0015
+00 | 00040 0016 wClock 2
+00 | 00041 0017
+00 | 00042 0018
+00 | 00043 0019
+00 | 00044 0020
+00 | 00045 0021
+00 | 00046 0022
+00 | 00047 0023
+00 | 00048 0024 wClock 3
+00 | 00049 0025
+00 | 00050 0026
+00 | 00051 0027
+00 | 00052 0028
+00 | 00053 0029
+00 | 00054 0030
+00 | 00055 0031
+00 | 00056 0032 wClock 4
+00 | 00057 0033
+00 | 00058 0034
+00 | 00059 0035
+00 | 00060 0036
+00 | 00061 0037
+00 | 00062 0038
+00 | 00063 0039
+00 | 00064 0040 inEvt 040 : REC_GR()
+00 | 00065 0041           : 02 gates
+00 | 00066 0042
+00 | 00067 0043
+00 | 00068 0044
+00 | 00069 0045
+00 | 00070 0046
+00 | 00071 0047
+00 | 00072 0048 inEvt 043 : SENDBS_DONE
+00 | 00073 0049           : 01 gates
+00 | 00074 0050
+00 | 00075 0051
+00 | 00076 0052 inEvt 051 : SENDGR_DONE
+00 | 00077 0053           : 01 gates
+00 | 00078 0054
+00 | 00079 0055
+00 | 00080 0056 $ret:1, 
+00 | 00081 0057 dataBS:17, 
+00 | 00082 0058 
+00 | 00083 0059 
+00 | 00084 0060 
+00 | 00085 0061 
+00 | 00086 0062 
+00 | 00087 0063 
+00 | 00088 0064 
+00 | 00089 0065 
+00 | 00090 0066 
+00 | 00091 0067 
+00 | 00092 0068 
+00 | 00093 0069 
+00 | 00094 0070 
+00 | 00095 0071 
+00 | 00096 0072 
+00 | 00097 0073 
+00 | 00098 0074 dataGR:20, 
+00 | 00099 0075 
+00 | 00100 0076 
+00 | 00101 0077 
+00 | 00102 0078 
+00 | 00103 0079 
+00 | 00104 0080 
+00 | 00105 0081 
+00 | 00106 0082 
+00 | 00107 0083 
+00 | 00108 0084 
+00 | 00109 0085 
+00 | 00110 0086 
+00 | 00111 0087 
+00 | 00112 0088 
+00 | 00113 0089 
+00 | 00114 0090 
+00 | 00115 0091 
+00 | 00116 0092 
+00 | 00117 0093 
+00 | 00118 0094 dataGR2:20, 
+00 | 00119 0095 
+00 | 00120 0096 
+00 | 00121 0097 
+00 | 00122 0098 
+00 | 00123 0099 
+00 | 00124 0100 
+00 | 00125 0101 
+00 | 00126 0102 
+00 | 00127 0103 
+00 | 00128 0104 
+00 | 00129 0105 
+00 | 00130 0106 
+00 | 00131 0107 
+00 | 00132 0108 
+00 | 00133 0109 
+00 | 00134 0110 
+00 | 00135 0111 
+00 | 00136 0112 
+00 | 00137 0113 
+00 | 00138 0114 grId1:1, 
+00 | 00139 0115 grParam1:1, 
+00 | 00140 0116 grp1:10, 
+00 | 00141 0117 
+00 | 00142 0118 
+00 | 00143 0119 
+00 | 00144 0120 
+00 | 00145 0121 
+00 | 00146 0122 
+00 | 00147 0123 
+00 | 00148 0124 
+00 | 00149 0125 
+00 | 00150 0126 nodeId:2, 
+00 | 00151 0127 
+00 | 00152 0128 delay:4, 
+00 | 00153 0129 
+00 | 00154 0130 
+00 | 00155 0131 
+00 | 00156 0132 nodeMax:1, 
+00 | 00157 0133 delay2:4, 
+00 | 00158 0134 
+00 | 00159 0135 
+00 | 00160 0136 
+00 | 00161 0137 i:1, 
+00 | 00162 0138 __i_0x8d70900:1, 
+00 | 00163 0139 ParAnd_flag[3], 
+00 | 00164 0140 
+00 | 00165 0141 
+00 | 00166 0142 idx:1, 
+00 | 00167 0143 x:1, 
+00 | 00168 0144 __x_0x8d42cb0:1, 
+00 | 00169 0145 pos:1, 
+00 | 00170 0146 delaySend:4, 
+00 | 00171 0147 
+00 | 00172 0148 
+00 | 00173 0149 
+d1 | 00174 d1 set_c ushort 40 10370         | config gate REC_GR() with 2 await(s) - 0x2882 = 10370
+28 | 00175 28 
+28 | 00176 28 
+82 | 00177 82 
+d1 | 00178 d1 set_c ushort 48 11009         | config gate SENDBS_DONE with 1 await(s) - 0x2b01 = 11009
+30 | 00179 30 
+2b | 00180 2b 
+01 | 00181 01 
+d1 | 00182 d1 set_c ushort 52 13057         | config gate SENDGR_DONE with 1 await(s) - 0x3301 = 13057
+34 | 00183 34 
+33 | 00184 33 
+01 | 00185 01 
+c0 | 00186 c0 set_c ubyte 114 1             | grId1 = 1
+72 | 00187 72 
+01 | 00188 01 
+c0 | 00189 c0 set_c ubyte 115 1             | grParam1 = 1
+73 | 00190 73 
+01 | 00191 01 
+40 | 00192 40 push_c 116                    | push_c &grp1:group_t
+74 | 00193 74 
+90 | 00194 90 push_v ubyte 114              | push grId1:ubyte
+72 | 00195 72 
+90 | 00196 90 push_v ubyte 115              | push grParam1:ubyte
+73 | 00197 73 
+40 | 00198 40 push_c 1                      | push 1
+01 | 00199 01 
+40 | 00200 40 push_c 1                      | push 1
+01 | 00201 01 
+40 | 00202 40 push_c 3                      | push 3
+03 | 00203 03 
+40 | 00204 40 push_c 0                      | push 0
+00 | 00205 00 
+24 | 00206 24 func 10                       | func groupInit
+0a | 00207 0a 
+17 | 00208 17 popx                          | popx 
+24 | 00209 24 func 0                        | func getNodeId
+00 | 00210 00 
+a1 | 00211 a1 pop ushort 126                | pop nodeId
+7e | 00212 7e 
+41 | 00213 41 push_c 1000                   | push 1000
+03 | 00214 03 
+e8 | 00215 e8 
+40 | 00216 40 push_c 10                     | push 10
+0a | 00217 0a 
+41 | 00218 41 push_c 2000                   | push 2000
+07 | 00219 07 
+d0 | 00220 d0 
+40 | 00221 40 push_c 4                      | push 4
+04 | 00222 04 
+91 | 00223 91 push_v ushort 126             | push nodeId:ushort
+7e | 00224 7e 
+05 | 00225 05 sub                           | sub
+08 | 00226 08 mult                          | mult
+08 | 00227 08 mult                          | mult
+06 | 00228 06 add                           | add
+a2 | 00229 a2 pop ulong 128                 | pop delay
+80 | 00230 80 
+c0 | 00231 c0 set_c ubyte 132 20            | nodeMax = 20
+84 | 00232 84 
+14 | 00233 14 
+41 | 00234 41 push_c 1000                   | push 1000
+03 | 00235 03 
+e8 | 00236 e8 
+41 | 00237 41 push_c 20000                  | push 20000
+4e | 00238 4e 
+20 | 00239 20 
+90 | 00240 90 push_v ubyte 132              | push nodeMax:ubyte
+84 | 00241 84 
+08 | 00242 08 mult                          | mult
+06 | 00243 06 add                           | add
+a2 | 00244 a2 pop ulong 133                 | pop delay2
+85 | 00245 85 
+c0 | 00246 c0 set_c ubyte 57 2              | dataBS.msgId = 2
+39 | 00247 39 
+02 | 00248 02 
+89 | 00249 89 tkins_max 0 14                | insert track ParEver_sub_1_14
+01 | 00250 .00 addr:256
+00 | 00251 .0e 
+89 | 00252 89 tkins_max 0 15                | insert track ParEver_sub_2_15
+02 | 00253 .00 addr:550
+26 | 00254 .0f 
+01 | 00255 01 end                           | end
+28 | 00256 28 clken_v 0 0 ulong 128 20      | clock enable Awake_delay_20 (delay:ulong)ms
+11 | 00257 11 
+00 | 00258 00 
+80 | 00259 80 
+01 | 00260 .00 addr:263
+07 | 00261 .14 
+01 | 00262 01 end                           | end
+58 | 00263 58 outevt_c 5 2                  | emit LEDS len=1 const=2
+05 | 00264 05 
+02 | 00265 02 
+c0 | 00266 c0 set_c ubyte 137 0             | i = 0
+89 | 00267 89 
+00 | 00268 00 
+c0 | 00269 c0 set_c ubyte 138 8             | __i_0x8d70900 = 8
+8a | 00270 8a 
+08 | 00271 08 
+90 | 00272 90 push_v ubyte 138              | push __i_0x8d70900:ubyte
+8a | 00273 8a 
+90 | 00274 90 push_v ubyte 137              | push i:ubyte
+89 | 00275 89 
+11 | 00276 11 gte                           | gte
+4f | 00277 4f ifelse 83 84                  | ifelse True_83 False_84
+01 | 00278 .00 addr:282
+1a | 00279 .53 
+01 | 00280 .00 addr:290
+22 | 00281 .54 
+3d | 00282 3d tkins_z 1 11 30               | insert track Loop_out_30 tree 11
+8b | 00283 8b 
+02 | 00284 .00 addr:515
+03 | 00285 .1e 
+01 | 00286 01 end                           | end
+39 | 00287 39 exec 85                       | goto  85
+01 | 00288 .00 addr:272
+10 | 00289 .1c 
+48 | 00290 48 memclr 139 3                  | clear gates from addr 139 to addr 141
+8b | 00291 8b 
+03 | 00292 03 
+89 | 00293 89 tkins_max 0 35                | insert track ParAnd_sub_1_35
+01 | 00294 .00 addr:303
+2f | 00295 .23 
+89 | 00296 89 tkins_max 0 36                | insert track ParAnd_sub_2_36
+01 | 00297 .00 addr:395
+8b | 00298 .24 
+89 | 00299 89 tkins_max 0 37                | insert track ParAnd_sub_3_37
+01 | 00300 .00 addr:486
+e6 | 00301 .25 
+01 | 00302 01 end                           | end
+c0 | 00303 c0 set_c ubyte 143 0             | x = 0
+8f | 00304 8f 
+00 | 00305 00 
+c0 | 00306 c0 set_c ubyte 144 15            | __x_0x8d42cb0 = 15
+90 | 00307 90 
+0f | 00308 0f 
+90 | 00309 90 push_v ubyte 144              | push __x_0x8d42cb0:ubyte
+90 | 00310 90 
+90 | 00311 90 push_v ubyte 143              | push x:ubyte
+8f | 00312 8f 
+11 | 00313 11 gte                           | gte
+4f | 00314 4f ifelse 49 50                  | ifelse True_49 False_50
+01 | 00315 .00 addr:319
+3f | 00316 .31 
+01 | 00317 .00 addr:327
+47 | 00318 .32 
+3d | 00319 3d tkins_z 1 19 44               | insert track Loop_out_44 tree 19
+93 | 00320 93 
+01 | 00321 .00 addr:347
+5b | 00322 .2c 
+01 | 00323 01 end                           | end
+39 | 00324 39 exec 51                       | goto  51
+01 | 00325 .00 addr:309
+35 | 00326 .2a 
+40 | 00327 40 push_c 0                      | push 0
+00 | 00328 00 
+40 | 00329 40 push_c 59                     | push dataBS.nodes
+3b | 00330 3b 
+40 | 00331 40 push_c 15                     | push idx max 15
+0f | 00332 0f 
+90 | 00333 90 push_v ubyte 143              | push x:ubyte
+8f | 00334 8f 
+07 | 00335 07 mod                           | mod: limmit idx
+40 | 00336 40 push_c 1                      | push var len ubyte
+01 | 00337 01 
+08 | 00338 08 mult                          | mult: varlen * idx
+06 | 00339 06 add                           | add: array base addr + len position
+68 | 00340 68 set_e ubyte                   | set (ubyte)*(pop1) = pop2
+40 | 00341 40 push_c 143                    | push &x
+8f | 00342 8f 
+60 | 00343 60 inc ubyte                     | inc ubyte
+39 | 00344 39 exec 51                       | goto  51
+01 | 00345 .00 addr:309
+35 | 00346 .2a 
+90 | 00347 90 push_v ubyte 137              | push i:ubyte
+89 | 00348 89 
+40 | 00349 40 push_c 7                      | push 7
+07 | 00350 07 
+05 | 00351 05 sub                           | sub
+a0 | 00352 a0 pop ubyte 142                 | pop idx
+8e | 00353 8e 
+58 | 00354 58 outevt_c 6 2                  | emit LED0 len=1 const=2
+06 | 00355 06 
+02 | 00356 02 
+2a | 00357 2a set_v ubyte 78 ubyte 142      | dataGR.pwr = idx
+00 | 00358 00 
+4e | 00359 4e 
+8e | 00360 8e 
+2a | 00361 2a set_v ubyte 58 ubyte 142      | dataBS.pwr = idx
+00 | 00362 00 
+3a | 00363 3a 
+8e | 00364 8e 
+90 | 00365 90 push_v ubyte 142              | push idx:ubyte
+8e | 00366 8e 
+24 | 00367 24 func 17                       | func setRFPower
+11 | 00368 11 
+17 | 00369 17 popx                          | popx 
+2a | 00370 2a set_v ubyte 74 ubyte 114      | dataGR.grId = grId1
+00 | 00371 00 
+4a | 00372 4a 
+72 | 00373 72 
+c0 | 00374 c0 set_c ubyte 77 1              | dataGR.msgId = 1
+4d | 00375 4d 
+01 | 00376 01 
+d1 | 00377 d1 set_c ushort 75 0xffff        | dataGR.node = 0xffff
+4b | 00378 4b 
+ff | 00379 ff 
+ff | 00380 ff 
+b1 | 00381 b1 outevt_v 41 74                | emit SEND_GR len=20 var=dataGR
+29 | 00382 29 
+4a | 00383 4a 
+d1 | 00384 d1 set_c ushort 54 63            | await SENDGR_DONE[0]
+36 | 00385 36 
+01 | 00386 .00 addr:389
+85 | 00387 .3f 
+01 | 00388 01 end                           | end
+c0 | 00389 c0 set_c ubyte 139 1             | open gate 1
+8b | 00390 8b 
+01 | 00391 01 
+39 | 00392 39 exec 38                       | goto  38
+01 | 00393 .00 addr:500
+f4 | 00394 .26 
+89 | 00395 89 tkins_max 0 64                | insert track ParOr_sub_1_64
+01 | 00396 .00 addr:402
+92 | 00397 .40 
+89 | 00398 89 tkins_max 0 65                | insert track ParOr_sub_2_65
+01 | 00399 .00 addr:454
+c6 | 00400 .41 
+01 | 00401 01 end                           | end
+c0 | 00402 c0 set_c ubyte 145 0             | pos = 0
+91 | 00403 91 
+00 | 00404 00 
+90 | 00405 90 push_v ubyte 114              | push grId1:ubyte
+72 | 00406 72 
+a0 | 00407 a0 pop ubyte 42                  | evt REC_GR() auxId = pop
+2a | 00408 2a 
+d1 | 00409 d1 set_c ushort 43 72            | await REC_GR()[0]
+2b | 00410 2b 
+01 | 00411 .00 addr:414
+9e | 00412 .48 
+01 | 00413 01 end                           | end
+5c | 00414 5c getextdt_v 74 20              | getExtData dataGR 20
+4a | 00415 4a 
+14 | 00416 14 
+40 | 00417 40 push_c 2                      | push 2
+02 | 00418 02 
+90 | 00419 90 push_v ubyte 77                     | push dataGR.msgId [Optm:: push_c addr + deref]
+4d | 00420 4d 
+0f | 00421 0f eq                            | eq
+4f | 00422 4f ifelse 75 76                  | ifelse True_75 EndIf_76
+01 | 00423 .00 addr:427
+ab | 00424 .4b 
+01 | 00425 .00 addr:405
+95 | 00426 .44 
+91 | 00427 91 push_v ushort 75                     | push dataGR.node [Optm:: push_c addr + deref]
+4b | 00428 4b 
+40 | 00429 40 push_c 59                     | push dataBS.nodes
+3b | 00430 3b 
+40 | 00431 40 push_c 15                     | push idx max 15
+0f | 00432 0f 
+90 | 00433 90 push_v ubyte 145              | push pos:ubyte
+91 | 00434 91 
+07 | 00435 07 mod                           | mod: limmit idx
+40 | 00436 40 push_c 1                      | push var len ubyte
+01 | 00437 01 
+08 | 00438 08 mult                          | mult: varlen * idx
+06 | 00439 06 add                           | add: array base addr + len position
+68 | 00440 68 set_e ubyte                   | set (ubyte)*(pop1) = pop2
+40 | 00441 40 push_c 145                    | push &pos
+91 | 00442 91 
+60 | 00443 60 inc ubyte                     | inc ubyte
+39 | 00444 39 exec 76                       | goto  76
+01 | 00445 .00 addr:405
+95 | 00446 .44 
+48 | 00447 48 memclr 42 2                   | clear EXT gates for REC_GR()
+2a | 00448 2a 
+02 | 00449 02 
+89 | 00450 89 tkins_max 0 66                | insert track ParOr_out_66
+01 | 00451 .00 addr:466
+d2 | 00452 .42 
+01 | 00453 01 end                           | end
+29 | 00454 29 clken_c 1 1000 77             | clock enable Awake_1000_77 1000msec
+03 | 00455 03 
+01 | 00456 01 
+03 | 00457 03 
+e8 | 00458 e8 
+01 | 00459 .00 addr:462
+ce | 00460 .4d 
+01 | 00461 01 end                           | end
+89 | 00462 89 tkins_max 0 66                | insert track ParOr_out_66
+01 | 00463 .00 addr:466
+d2 | 00464 .42 
+01 | 00465 01 end                           | end
+48 | 00466 48 memclr 8 8                    | clear WClocks gates from 1 to 2
+08 | 00467 08 
+08 | 00468 08 
+48 | 00469 48 memclr 42 2                   | clear EXT gates for REC_GR()
+2a | 00470 2a 
+02 | 00471 02 
+b1 | 00472 b1 outevt_v 40 57                | emit SEND_BS len=17 var=dataBS
+28 | 00473 28 
+39 | 00474 39 
+d1 | 00475 d1 set_c ushort 50 81            | await SENDBS_DONE[0]
+32 | 00476 32 
+01 | 00477 .00 addr:480
+e0 | 00478 .51 
+01 | 00479 01 end                           | end
+c0 | 00480 c0 set_c ubyte 140 1             | open gate 2
+8c | 00481 8c 
+01 | 00482 01 
+39 | 00483 39 exec 38                       | goto  38
+01 | 00484 .00 addr:500
+f4 | 00485 .26 
+29 | 00486 29 clken_c 2 2000 82             | clock enable Awake_2000_82 2000msec
+03 | 00487 03 
+02 | 00488 02 
+07 | 00489 07 
+d0 | 00490 d0 
+01 | 00491 .00 addr:494
+ee | 00492 .52 
+01 | 00493 01 end                           | end
+c0 | 00494 c0 set_c ubyte 141 1             | open gate 3
+8d | 00495 8d 
+01 | 00496 01 
+39 | 00497 39 exec 38                       | goto  38
+01 | 00498 .00 addr:500
+f4 | 00499 .26 
+3a | 00500 3a chkret 139                    | ParAnd_out_39 -- if (gate 0 == 0) PC=PC+1
+8b | 00501 8b 
+01 | 00502 01 end                           | end
+3a | 00503 3a chkret 140                    | ParAnd_out_39 -- if (gate 1 == 0) PC=PC+1
+8c | 00504 8c 
+01 | 00505 01 end                           | end
+3a | 00506 3a chkret 141                    | ParAnd_out_39 -- if (gate 2 == 0) PC=PC+1
+8d | 00507 8d 
+01 | 00508 01 end                           | end
+40 | 00509 40 push_c 137                    | push &i
+89 | 00510 89 
+60 | 00511 60 inc ubyte                     | inc ubyte
+39 | 00512 39 exec 85                       | goto  85
+01 | 00513 .00 addr:272
+10 | 00514 .1c 
+48 | 00515 48 memclr 8 16                   | clear WClocks gates from 1 to 3
+08 | 00516 08 
+10 | 00517 10 
+48 | 00518 48 memclr 42 2                   | clear EXT gates for REC_GR()
+2a | 00519 2a 
+02 | 00520 02 
+48 | 00521 48 memclr 50 2                   | clear EXT gates for SENDBS_DONE
+32 | 00522 32 
+02 | 00523 02 
+48 | 00524 48 memclr 54 2                   | clear EXT gates for SENDGR_DONE
+36 | 00525 36 
+02 | 00526 02 
+58 | 00527 58 outevt_c 5 4                  | emit LEDS len=1 const=4
+05 | 00528 05 
+04 | 00529 04 
+28 | 00530 28 clken_v 3 0 ulong 133 89      | clock enable Awake_delay2_89 (delay2:ulong)ms
+11 | 00531 11 
+03 | 00532 03 
+85 | 00533 85 
+01 | 00534 .00 addr:263
+07 | 00535 .15 
+01 | 00536 01 end                           | end
+48 | 00537 48 memclr 8 24                   | clear WClocks gates from 1 to 4
+08 | 00538 08 
+18 | 00539 18 
+48 | 00540 48 memclr 42 2                   | clear EXT gates for REC_GR()
+2a | 00541 2a 
+02 | 00542 02 
+48 | 00543 48 memclr 50 2                   | clear EXT gates for SENDBS_DONE
+32 | 00544 32 
+02 | 00545 02 
+48 | 00546 48 memclr 54 2                   | clear EXT gates for SENDGR_DONE
+36 | 00547 36 
+02 | 00548 02 
+01 | 00549 01 end                           | end
+90 | 00550 90 push_v ubyte 114              | push grId1:ubyte
+72 | 00551 72 
+a0 | 00552 a0 pop ubyte 45                  | evt REC_GR() auxId = pop
+2d | 00553 2d 
+d1 | 00554 d1 set_c ushort 46 94            | await REC_GR()[1]
+2e | 00555 2e 
+02 | 00556 .00 addr:559
+2f | 00557 .5e 
+01 | 00558 01 end                           | end
+5c | 00559 5c getextdt_v 94 20              | getExtData dataGR2 20
+5e | 00560 5e 
+14 | 00561 14 
+40 | 00562 40 push_c 1                      | push 1
+01 | 00563 01 
+90 | 00564 90 push_v ubyte 97                     | push dataGR2.msgId [Optm:: push_c addr + deref]
+61 | 00565 61 
+0f | 00566 0f eq                            | eq
+4f | 00567 4f ifelse 105 106                | ifelse True_105 EndIf_106
+02 | 00568 .00 addr:572
+3c | 00569 .69 
+02 | 00570 .00 addr:550
+26 | 00571 .5a 
+58 | 00572 58 outevt_c 6 2                  | emit LED0 len=1 const=2
+06 | 00573 06 
+02 | 00574 02 
+c0 | 00575 c0 set_c ubyte 97 2              | dataGR2.msgId = 2
+61 | 00576 61 
+02 | 00577 02 
+40 | 00578 40 push_c 98                     | push dataGR2.pwr
+62 | 00579 62 
+24 | 00580 24 func 17                       | func setRFPower
+11 | 00581 11 
+17 | 00582 17 popx                          | popx 
+40 | 00583 40 push_c 20                     | push 20
+14 | 00584 14 
+40 | 00585 40 push_c 10                     | push 10
+0a | 00586 0a 
+24 | 00587 24 func 1                        | func random
+01 | 00588 01 
+07 | 00589 07 mod                           | mod
+08 | 00590 08 mult                          | mult
+a2 | 00591 a2 pop ulong 146                 | pop delaySend
+92 | 00592 92 
+28 | 00593 28 clken_v 4 0 ulong 146 101     | clock enable Awake_delaySend_101 (delaySend:ulong)ms
+11 | 00594 11 
+04 | 00595 04 
+92 | 00596 92 
+02 | 00597 .00 addr:600
+58 | 00598 .65 
+01 | 00599 01 end                           | end
+b1 | 00600 b1 outevt_v 41 94                | emit SEND_GR len=20 var=dataGR2
+29 | 00601 29 
+5e | 00602 5e 
+39 | 00603 39 exec 106                      | goto  106
+02 | 00604 .00 addr:550
+26 | 00605 .5a 
+48 | 00606 48 memclr 32 8                   | clear WClocks gates from 4 to 5
+20 | 00607 20 
+08 | 00608 08 
+48 | 00609 48 memclr 42 2                   | clear EXT gates for REC_GR()
+2a | 00610 2a 
+02 | 00611 02 
+01 | 00612 01 end                           | end
+48 | 00613 48 memclr 0 40                   | clear WClocks gates from 0 to 5
+00 | 00614 00 
+28 | 00615 28 
+01 | 00616 01 end                           | end

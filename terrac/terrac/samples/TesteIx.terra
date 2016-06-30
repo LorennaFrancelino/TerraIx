@@ -1,0 +1,5 @@
+#include "TerraIx.defs"
+
+var ubyte a = 10;
+var ubyte b = 25;
+var ubyte soma = a+b;

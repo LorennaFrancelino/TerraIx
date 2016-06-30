@@ -1,0 +1,80 @@
+#include "TerraNet.defs"
+
+pktype usrMsg2 from radioMsg with
+	var ubyte[4] d8;
+	var ushort[4] d16;
+	var ulong[2] d32;
+end
+
+
+var ubyte stat;
+var usrMsg2 msg2;
+
+msg2.type=1;
+msg2.source=getNodeId();
+msg2.target=BROADCAST;
+
+// Microphone reading control
+#define NUM_READS 32		// Number of read points
+var ushort[NUM_READS] data;	// Read buffer
+
+
+var ubyte seq=0;
+var ushort max,min, accAvg=500;
+var ubyte sendBusy=FALSE;
+
+do
+stat = setupMic(data,NUM_READS,512,10); // setupMic(<data buffer>,<count>,<period>,<gain>)
+finally
+end
+
+// Discard 1st read
+emit REQ_MIC();
+await MIC();
+
+par do
+loop do
+	emit REQ_MIC();
+	await MIC();
+	max = 0;
+	min = 0x7fff;
+	var short diff;
+	var long volume=0;
+	loop i, NUM_READS do
+		if data[i] > max then max = data[i]; end
+		if data[i] < min then min = data[i]; end
+		diff = (data[i]-accAvg);
+		if diff > 0 then
+		volume = volume + diff;
+		else
+		volume = volume - diff;
+		end
+	end
+	accAvg = (accAvg + (((max-min)/2)+min))/2;
+	if (max-min) > 0 then
+		if sendBusy==FALSE then
+			inc seq;
+			msg2.d8[0] = seq;
+			msg2.d16[3] = max-min;
+			msg2.d16[2] = accAvg;//((max-min)/2)+min;
+			msg2.d16[0] = max;
+			msg2.d16[1] = min;
+			msg2.d32[0] = volume/NUM_READS;
+			msg2.d8[1] = (volume/NUM_READS) >> 10;
+
+			emit REQ_CUSTOM_A(0);
+			//await 50ms; // Para não detectar o próprio beep
+		end
+	end
+
+end
+with
+	loop do
+		await CUSTOM_A();
+		sendBusy = TRUE;
+		emit SEND(msg2);
+		await SEND_DONE();
+		//emit BEEP(50);
+		sendBusy = FALSE;
+	end
+end

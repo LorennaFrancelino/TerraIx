@@ -1,0 +1,6 @@
+#include "TerraNet.defs"
+//#include "TerraGrp.defs"
+
+var float[10] x;
+
+x[1]=10.;

@@ -1,0 +1,135 @@
+52 134 1 1 0 0 8 2 8
+00 | 00000 0 track 0
+00 | 00001 0
+00 | 00002 0
+00 | 00003 0
+00 | 00004 0 track 1
+00 | 00005 0
+00 | 00006 0
+00 | 00007 0
+00 | 00008 0000 wClock 0
+00 | 00009 0001
+00 | 00010 0002
+00 | 00011 0003
+00 | 00012 0004
+00 | 00013 0005
+00 | 00014 0006
+00 | 00015 0007
+00 | 00016 0008 inEvt 041 : SEND_DONE
+00 | 00017 0009           : 01 gates
+00 | 00018 0010
+00 | 00019 0011
+00 | 00020 0012 inEvt 045 : RECEIVE
+00 | 00021 0013           : 01 gates
+00 | 00022 0014
+00 | 00023 0015
+00 | 00024 0016 $ret:1, 
+00 | 00025 0017 nodeId:2, 
+00 | 00026 0018 
+00 | 00027 0019 msgRadio:25, 
+00 | 00028 0020 
+00 | 00029 0021 
+00 | 00030 0022 
+00 | 00031 0023 
+00 | 00032 0024 
+00 | 00033 0025 
+00 | 00034 0026 
+00 | 00035 0027 
+00 | 00036 0028 
+00 | 00037 0029 
+00 | 00038 0030 
+00 | 00039 0031 
+00 | 00040 0032 
+00 | 00041 0033 
+00 | 00042 0034 
+00 | 00043 0035 
+00 | 00044 0036 
+00 | 00045 0037 
+00 | 00046 0038 
+00 | 00047 0039 
+00 | 00048 0040 
+00 | 00049 0041 
+00 | 00050 0042 
+00 | 00051 0043 
+d1 | 00052 d1 set_c ushort 8 10497          | config gate SEND_DONE with 1 await(s) - 0x2901 = 10497
+08 | 00053 08 
+29 | 00054 29 
+01 | 00055 01 
+d1 | 00056 d1 set_c ushort 12 11521         | config gate RECEIVE with 1 await(s) - 0x2d01 = 11521
+0c | 00057 0c 
+2d | 00058 2d 
+01 | 00059 01 
+24 | 00060 24 func 0                        | func getNodeId
+00 | 00061 00 
+a1 | 00062 a1 pop ushort 17                 | pop nodeId
+11 | 00063 11 
+c0 | 00064 c0 set_c ubyte 24 0              | msgRadio.d8[0] = 0
+18 | 00065 18 
+00 | 00066 00 
+40 | 00067 40 push_c 1                      | push 1
+01 | 00068 01 
+91 | 00069 91 push_v ushort 17              | push nodeId:ushort
+11 | 00070 11 
+0f | 00071 0f eq                            | eq
+4f | 00072 4f ifelse 23 24                  | ifelse True_23 False_24
+00 | 00073 .00 addr:77
+4d | 00074 .17 
+00 | 00075 .00 addr:111
+6f | 00076 .18 
+2a | 00077 2a set_v ushort 20 ushort 17     | msgRadio.source = nodeId
+11 | 00078 11 
+14 | 00079 14 
+11 | 00080 11 
+d1 | 00081 d1 set_c ushort 22 0xffff        | msgRadio.target = 0xffff
+16 | 00082 16 
+ff | 00083 ff 
+ff | 00084 ff 
+29 | 00085 29 clken_c 0 10000 11            | clock enable Awake_10000_11 10000msec
+03 | 00086 03 
+00 | 00087 00 
+27 | 00088 27 
+10 | 00089 10 
+00 | 00090 .00 addr:93
+5d | 00091 .0b 
+01 | 00092 01 end                           | end
+40 | 00093 40 push_c 24                     | push_c msgRadio.d8[0]
+18 | 00094 18 
+60 | 00095 60 inc ubyte                     | inc ubyte
+b1 | 00096 b1 outevt_v 40 19                | emit SEND len=25 var=msgRadio
+28 | 00097 28 
+13 | 00098 13 
+d1 | 00099 d1 set_c ushort 10 15            | await SEND_DONE[0]
+0a | 00100 0a 
+00 | 00101 .00 addr:85
+55 | 00102 .08 
+01 | 00103 01 end                           | end
+48 | 00104 48 memclr 0 8                    | clear WClocks gates from 0 to 1
+00 | 00105 00 
+08 | 00106 08 
+48 | 00107 48 memclr 10 2                   | clear EXT gates for SEND_DONE
+0a | 00108 0a 
+02 | 00109 02 
+01 | 00110 01 end                           | end
+d1 | 00111 d1 set_c ushort 14 19            | await RECEIVE[0]
+0e | 00112 0e 
+00 | 00113 .00 addr:116
+74 | 00114 .13 
+01 | 00115 01 end                           | end
+5c | 00116 5c getextdt_v 19 25              | getExtData msgRadio 25
+13 | 00117 13 
+19 | 00118 19 
+90 | 00119 90 push_v ubyte 24               | push_c msgRadio.d8[0] [Optm:: push_c addr + deref]
+18 | 00120 18 
+25 | 00121 25 outevt_e 5                    | emit LEDS
+05 | 00122 05 
+39 | 00123 39 exec 16                       | goto  16
+00 | 00124 .00 addr:111
+6f | 00125 .10 
+48 | 00126 48 memclr 14 2                   | clear EXT gates for RECEIVE
+0e | 00127 0e 
+02 | 00128 02 
+01 | 00129 01 end                           | end
+48 | 00130 48 memclr 0 8                    | clear WClocks gates from 0 to 1
+00 | 00131 00 
+08 | 00132 08 
+01 | 00133 01 end                           | end

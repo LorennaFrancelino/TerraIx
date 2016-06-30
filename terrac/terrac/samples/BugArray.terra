@@ -1,0 +1,140 @@
+#include "TerraNet.defs"
+
+#define CONSTRUCT 1
+#define TEMPER 2
+
+pktype usrMsg from radioMsg with
+  var ubyte[4]d8;
+  var ushort[4]d16;
+  var ulong[2] d32;
+end
+
+var ushort myNodeId = getNodeId();
+var ushort dadNodeId = -1;
+var ulong jump = -1;
+var ubyte childNumber = 0;
+var ushort[10] childNodeId;
+var ubyte msgId = 0;
+var ushort globalMsgId = 1;
+var ushort[10] msgIdAck;
+var usrMsg msgRadio;
+
+var ubyte ack;
+var ubyte stat;
+
+loop i,10 do
+  msgIdAck[i] = 0;
+end
+
+/*
+ * CONSTRUCT Message
+ * d32[0] = Jump
+ *
+ *
+ * TEMPER Message
+ * d16[0] = Temperature
+ * d16[1] = MyNodeId
+ * d16[2] = GlobalMsgId
+ * d8[0]  = Number of child
+ * d8[1]  = MsgId
+ * d32[0] = Jump
+*/
+
+// Create Network
+if myNodeId == 11 then
+  await 3s;
+  dadNodeId = 1;
+  jump = 1;
+  msgRadio.source = myNodeId;
+  msgRadio.target = BROADCAST;
+  msgRadio.type = CONSTRUCT;
+  msgRadio.d32[0] = jump + 1;
+  emit SEND(msgRadio);
+  await SEND_DONE;
+else
+  msgRadio = await RECEIVE(CONSTRUCT);
+  dadNodeId = msgRadio.source;
+  jump = msgRadio.d32[0];
+  msgRadio.d32[0] = jump + 1;
+  msgRadio.source = myNodeId;
+  msgRadio.target = BROADCAST;
+  msgRadio.type = CONSTRUCT;
+  emit SEND(msgRadio);
+  await SEND_DONE;
+end
+
+if dadNodeId != -1 then
+  emit LED0(ON);
+end
+
+
+//Send Temp
+par do
+  loop do
+    par/and do
+      //Get Temp and put in queue
+      await (3*jump)s;
+      emit REQ_TEMP();
+      msgRadio.d16[0] = await TEMP;
+      msgRadio.d16[1] = myNodeId;
+      msgRadio.d8[0]  = childNumber;
+      msgRadio.d8[1] = msgId;
+      msgRadio.d32[0] = jump;
+
+      inc msgId;
+      stat = qPut(msgRadio);
+    with
+      await 33s;
+    end
+  end
+with
+  loop do
+    //Receive and put in queue
+    msgRadio = await RECEIVE(TEMPER);
+
+    var ubyte found = 0;
+    loop i, childNumber do
+      if childNodeId[i] == msgRadio.source then
+        found = 1;
+        if msgRadio.d16[2] == 0 or msgRadio.d16[2] > msgIdAck[i] then
+          msgIdAck[i] = msgRadio.d16[2];
+          //stat = qPut(msgRadio);
+          break;
+        end
+      end
+    end
+
+    if found == 0 and childNumber < 10 then
+      childNodeId[childNumber] = msgRadio.source;
+      inc childNumber;
+    end
+    
+    stat = qPut(msgRadio);
+  end
+with
+  loop do
+    //Send message
+    await Q_READY;
+    loop do
+      stat = qGet(msgRadio);
+      msgRadio.d16[2] = globalMsgId;
+      inc globalMsgId;
+      msgRadio.source = myNodeId;
+      msgRadio.target = dadNodeId;
+      msgRadio.type = TEMPER;
+  
+      emit SEND_ACK(msgRadio);
+      loop do
+        ack = await SEND_DONE_ACK;
+        if ack != 0 then
+          break;
+        end
+        emit SEND_ACK(msgRadio);
+      end
+      if qSize() == 0 then
+        break;
+      end
+    end
+  end
+end
+

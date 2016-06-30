@@ -1,0 +1,224 @@
+#include "TerraNet.defs"
+
+#define PROBE 0
+#define ECHO 1
+#define MAX_NODES 50
+#define DISSEMINATE 0
+#define GATHER 1
+#define RSLEEP 200
+
+pktype usrMsg from radioMsg with
+	var ubyte numPairs;
+	var ushort[3] nodeIds;
+	var ushort[3] values;
+	var ushort id;
+	var ushort period;
+	var ubyte code; // DISSEMINATE ou GATHER
+    var ubyte hop;
+end
+
+
+// Variaveis de controle de mensagens
+var ushort lastMessageId = 0xffff;
+var ushort nodeId = getNodeId();
+var ushort fatherId = 0;
+var ushort hopWaitTime = 0; // Guarda o tempo que este deverá esperar pela resposta
+					            // de seus filhos para o caso de requisição
+
+var usrMsg sendMessage;
+var usrMsg receiveMessage;
+var usrMsg sendMessage2;
+var usrMsg receiveMessage2;
+
+var ubyte queueError;
+var ubyte cont;
+var ubyte cont2;
+
+var ushort[MAX_NODES] loadnodeIds;
+var ushort[MAX_NODES] loadValues;
+
+// Variáveis de controle da medição da temperatura
+var ushort loadTemperaturePeriod = 10;
+
+var ushort loadTemperature;
+var ushort limitTemperature = 515;
+
+var ushort average;
+var ushort value0 = 500;
+var ushort value1 = 500;
+var ushort value2 = 500;
+var ushort value3 = 500;
+
+par do
+	// O loop abaixo solicita o valor do sensor de temperatura em um intervalo de tempo
+	// definido pelo valor da variavel loadTemperature, calculando a média das 4 últimas
+	// medições. Caso o valor dessa média seja maior que um certo limite (definido pela
+	// variável limitTemperature, a luz amarela do sensor de acente por 3 segundos.
+	loop do
+		par/and do
+			emit REQ_TEMP();
+			loadTemperature = await TEMP;
+
+			value0 = value1;
+			value1 = value2;
+			value2 = value3;
+			value3 = loadTemperature;
+		
+			average = (value0 + value1 + value2 + value3) / 4;
+
+			if average >= limitTemperature then
+				emit LED2(ON);
+				await 3s;
+			end
+			emit LED2(OFF);
+		with 
+			await (loadTemperaturePeriod)s;
+		end
+	end
+with
+	// O loop abaixo trata as mensagens recebidas via SEND, que acontecem nos seguintes
+	// casos:
+	// 1 - Para a opção de disseminação da informação (periodo)
+	// 2 - Para a opção de obtenção de informação, somente para as mensagens de PROBE pois
+	//     as mensagens de ECHO serão colocadas na fila e tratadas no loop a seguir
+	loop do
+		receiveMessage = await RECEIVE;
+
+		if receiveMessage.type == PROBE then
+			// Repassa a mensagem de PROBE para seus vizinhos somente se for 
+			// uma mensagem nova
+			if lastMessageId == 0xffff or receiveMessage.id > lastMessageId then
+				// Test
+				emit LED0(TOGGLE);
+				
+				lastMessageId = receiveMessage.id;
+				fatherId = receiveMessage.source;
+				hopWaitTime = 20 - 2 * receiveMessage.hop;
+
+				sendMessage.type   = PROBE;
+				sendMessage.source = nodeId;
+				sendMessage.target = BROADCAST;
+				sendMessage.id     = receiveMessage.id;
+				sendMessage.period = receiveMessage.period;
+				sendMessage.code   = receiveMessage.code;
+				sendMessage.hop    = receiveMessage.hop + 1;
+			
+				// Repassa a mensagem para os nós vizinhos
+        		await (random()%RSLEEP)ms;
+				emit SEND(sendMessage);
+				await SEND_DONE;
+	
+				if receiveMessage.code == DISSEMINATE then
+					// Para o caso de disseminação do periodo, atualiza o próprio
+					// periodo de medição da temperatura
+					loadTemperaturePeriod = receiveMessage.period;
+				else
+					if receiveMessage.code == GATHER then
+						// Para o caso de requisição, coloca uma mensagem na fila com 
+						// a temperatura média para ser tratada no loop de leitor da fila
+						sendMessage.type = ECHO;
+						sendMessage.numPairs = 1;
+						sendMessage.nodeIds[0] = nodeId;
+						sendMessage.values[0] = average;
+
+						queueError = qPut(sendMessage);
+					else
+						// Tipo de de função não especificada
+						// Gerar exceção ou algo parecido?
+					end
+				end
+			end
+		else 
+			if receiveMessage.type == ECHO then
+				// Para o caso de ter recebido uma mensagem de ECHO de um filho só coloca na
+				// fila para ser tratada no loop de leitor da fila
+				queueError = qPut(receiveMessage);
+			else
+				// Erro!!!! Tipo de mensagem não tratado
+				// Gerar exceção ou algo parecido?
+			end
+		end
+	end
+with
+
+loop do
+await Q_READY;
+	// O loop abaixo trata somente as mensagens colocadas na fila que são as mensagens de ECHO
+	// que um nó recebe de seus vizinhos para os quais ele enviou o PROBE
+	loop do
+		if hopWaitTime != 0 then
+			// O tempo de espera pela coleta dos dados dos filhos é inversamente
+			// proporcional ao número de hops. Ou seja, quanto mais próximo da
+			// base station, mais tempo tem que esperar pela resposta.
+			await (hopWaitTime)s;
+
+			// Preenchendo os vetores locais loadnodeIds e loadValues com todos os valores
+			// recebidos, inclusive o da própria média
+			cont = 0;
+			loop do
+				if qSize() == 0 then
+					break;
+				end
+
+		  		queueError = qGet(receiveMessage2); 
+				loop i, receiveMessage2.numPairs do
+					loadnodeIds[cont] = receiveMessage2.nodeIds[i];
+					var ushort temp = receiveMessage2.values[i];
+					loadValues[cont] = temp;
+					inc cont;
+				end	
+	
+				await 1ms;			
+			end
+			if qSize() == 0 then break; end
+
+			// Enviar para o pai mensagens de ECHO com os valores recebidos
+			// de 3 em 3 pares
+			sendMessage2.type     = ECHO;
+			sendMessage2.source   = nodeId;
+			sendMessage2.target   = fatherId;
+			sendMessage2.id       = receiveMessage2.id;
+			sendMessage2.numPairs = 3;
+
+			cont2 = 0;
+			loop i, cont do
+				sendMessage2.nodeIds[cont2] = loadnodeIds[i];
+				var ushort temp = loadValues[i];
+				sendMessage2.values[cont2] = temp;
+				inc cont2;
+
+				if cont2 == 3 then
+       				await (random()%RSLEEP)ms;
+					emit SEND(sendMessage2);
+					await SEND_DONE;
+
+					// Teste
+					emit LED1(ON);
+
+					cont2 = 0;
+				end			
+			end
+
+			// Para o caso do número total de pares não ser multiplo de 3
+			if cont2 != 0 then
+				sendMessage2.numPairs = cont2;
+
+	       		await (random()%RSLEEP)ms;
+				emit SEND(sendMessage2);
+				await SEND_DONE;
+
+				// Teste
+				emit LED1(ON);
+			end
+
+			// Teste
+			await 3s;
+			emit LED1(OFF);
+
+			hopWaitTime = 0;
+		end
+		await 10ms;
+	end
+end
+end
+
