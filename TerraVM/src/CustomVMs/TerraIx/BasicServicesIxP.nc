@@ -12,7 +12,10 @@
 #include "BasicServicesIx.h"
 //#include "AvroraPrint.h"
 
+//extern void dbg(char* canal, char* format, ...);
+
 module BasicServicesIxP{
+	
 	provides interface Boot as BSBoot;
 	provides interface BSTimer as BSTimerVM;
 	provides interface BSTimer as BSTimerAsync;
@@ -33,7 +36,11 @@ module BasicServicesIxP{
 	}
 
 }
-implementation{
+implementation{	
+	
+//	extern void dbg(char* canal, char* format, ...);
+	
+	void ReadVMXFile(char* fileName);
 
 	uint32_t LocalClock=0;
 	nx_uint16_t MoteID;					// Mote Identifier
@@ -101,6 +108,8 @@ implementation{
 		} else {
 			signal BSBoot.booted();
 		}
+		
+		ReadVMXFile("/home/gt-tei/git/TerraIx/terrac/samples/TesteIx.vmx");
 	}
 
 	
@@ -393,13 +402,16 @@ implementation{
 	void ReadVMXFile(char* file_name){	
 		int LINE_SIZE = 1000;
 		FILE *file;
-		newProgBlock_t* blockData;	
-		newProgVersion_t* Data;
+		newProgVersion_t Data;
 		
-		unsigned char line[LINE_SIZE];
-		unsigned int block[BLOCK_SIZE];
+		nx_uint8_t line[LINE_SIZE];
+		nx_uint8_t block[BLOCK_SIZE];
 		
 		int j=-1, k=0;
+		int start,end,tracks,wClocks,asyncs,wClock0,gate0,inEvts,async0;
+		
+		uint16_t Addr=0;
+		uint16_t blockId = 0;
 		
 		dbg(APPNAME, "ReadVMXFile.\n");
 		file = fopen(file_name, "r");
@@ -411,40 +423,43 @@ implementation{
 		signal BSUpload.resetMemory();
 		TViewer("vmstop",0,0);
 		// populando a estrutura com a primeira linha
-		fscanf(file, "%d%d%d%d%d%d%d%d%d", &Data->startProg, &Data->endProg, &Data->nTracks, 
-		&Data->wClocks, &Data->asyncs, &Data->wClock0, &Data->gate0, &Data->inEvts, &Data->async0);
+		fscanf(file, "%d%d%d%d%d%d%d%d%d", &start, &end, &tracks, &wClocks, &asyncs, &wClock0, 
+		&gate0, &inEvts, &async0);
+				
+		Data.startProg = (nx_uint16_t) start;
+		Data.endProg = (nx_uint16_t) end;
+		Data.nTracks = (nx_uint16_t) tracks; 
+		Data.wClocks = (nx_uint16_t) wClocks;
+		Data.asyncs = (nx_uint16_t) asyncs;
+		Data.wClock0 = (nx_uint16_t) wClock0;
+		Data.gate0 = (nx_uint16_t) gate0;
+		Data.inEvts = (nx_uint16_t) inEvts;
+		Data.async0 = (nx_uint16_t) async0;
 		
-		if (MoteID != BStation){
-			ProgVersion = Data->versionId;
-		} else {
-			ProgVersion++;
-		}
-		ProgBlockStart = Data->blockStart;
-		ProgBlockLen = Data->blockLen;
 		// Update environment values: StartProg addr, etc..
-		signal BSUpload.setEnv(Data);
+		signal BSUpload.setEnv(&Data);
 		
 		while(fgets(line,LINE_SIZE,file) != NULL){
 			if (j>=0){ // ignores first line
 				if(k<BLOCK_SIZE){
 					sscanf(line, "%x\n", &block[k]);
 					// printf("%2x\n", block[k]);// ok
-					blockData->data[k] = (nx_uint8_t) block[k]; // verificar se isso funciona
 				}
 				k++;
 			}
 			j++;
-			if (k==BLOCK_SIZE){
-				// load section
-				blockData->versionId = 1;
-				blockData->blockId = 1;
-				procNewProgBlock(blockData); // mando um bloco
+			if (k==BLOCK_SIZE){// load section
+				
+				Addr = blockId * BLOCK_SIZE;
+				signal BSUpload.loadSection(Addr , (uint8_t)BLOCK_SIZE, &block[0]);
+				call BM.set((uint16_t)blockId);
+				
+				blockId++;
 				j=0;
 				k=0;
 				// continuar com novo bloco	
 			}
 		}
-		// printf("valor de k: %d", k);
 		fclose(file);
 		if(k<BLOCK_SIZE && k!=0){ // if the last block doesn't have 24 bytes
 		// complete with zeros
@@ -452,14 +467,15 @@ implementation{
 				block[k] = 0;
 				k++;
 			}
-			// load the section once it is completed	
+			// load the section once it is completed
+			Addr = blockId * BLOCK_SIZE;
+			signal BSUpload.loadSection(Addr , (uint8_t)BLOCK_SIZE, &block[0]);
+			call BM.set((uint16_t)blockId);
+				
+			TViewer("vmstart",0,0);
+			signal BSUpload.start(TRUE);
+			// blockId++;	
 		}
-		/*
-		for(i=0; i<24; i++)
-		{
-		printf("%2x\n", block[i]);
-		}
-		 */
 	}
 
 	/**

@@ -13,7 +13,7 @@
 #include "stdio.h"
 //#include "AvroraPrint.h"
 
-//extern void dbg(char* canal, char* format, ...);
+
 
 module TerraVMC @safe()
 {
