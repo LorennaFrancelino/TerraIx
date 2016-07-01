@@ -24,8 +24,6 @@ module BasicServicesIxP{
 
 	uses interface Boot as TOSBoot;
 
-
-
 	uses {
 		// Bitmap
 		interface vmBitVector as BM;

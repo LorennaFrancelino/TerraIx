@@ -11,11 +11,17 @@ OPT_2 = $(CFLAGS)
 
 OPT_3 = -I$(IXDIR)/includes -I$(IXDIR)/timer -I$(IXDIR)/interfaces -I$(IXDIR)/types -I$(IXDIR)/system -DMHZ=16
 
-OPT_4=../../nesCix/src/Linux_Timer/setTimer.o
+OPT_4=setTimer.o
 
-OPT_5=../../nesCix/src/Debug/dbg.o
+OPT_5=dbg.o
 
-exe: 
+dbg.o: ../../nesCix/src/Debug/dbg.c
+	gcc -c ../../nesCix/src/Debug/dbg.c -o dbg.o
+	
+setTimer.o: ../../nesCix/src/Linux_Timer/setTimer.c
+	gcc -c ../../nesCix/src/Linux_Timer/setTimer.c -o setTimer.o
+	
+exe: dbg.o setTimer.o
 	@echo "    compiling $(COMPONENT) to a $(PLATFORM) binary"
 	nescc $(OPT_1) $(OPT_2) $(OPT_3) $(OPT_4) $(OPT_5) -gcc=$(GCC)
 	@echo "    compiled $(COMPONENT) to $(MAIN_EXE)"

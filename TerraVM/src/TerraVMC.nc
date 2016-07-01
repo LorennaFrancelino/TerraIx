@@ -1786,7 +1786,7 @@ void f_set_c(uint8_t Modifier){
 	event uint32_t VMCustom.getTime(){
 #ifndef ONLY_BSTATION
 		return call BSTimerVM.getNow();
-#else
+#else		
 		return 0;
 #endif
 		}
