@@ -113,6 +113,8 @@ implementation{
 		t_initial.tv_sec = t_current.tv_sec;
 		t_initial.tv_usec = t_current.tv_usec;	
 		
+		// dbg(APPNAME,"TimerP::TimerFrom.getNow(): now=%d\n",now);
+		
 		return now;
 	}
 	
