@@ -1,5 +1,14 @@
 #include "TerraIx.defs"
 
-var ubyte a = 10;
-var ubyte b = 25;
-var ubyte soma = a+b;
+var short a = 5;
+var long b = 60;
+
+var float mod = b%a;
+
+await 5s;
+
+var ulong t = getTime();
+
+// loop i,10 do
+//    a = a+5;
+// end
