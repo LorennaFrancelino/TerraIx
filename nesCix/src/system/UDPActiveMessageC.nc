@@ -12,14 +12,15 @@ configuration UDPActiveMessageC{
 }
 implementation{
 	
-	components UDPActiveMessageP;
+	components UDPActiveMessageP, new TimerMilliC() as SD_Timer, new TimerMilliC() as TimerDelay;
 	
 	SplitControl = UDPActiveMessageP;
 	AMSend = UDPActiveMessageP;
 	Receive = UDPActiveMessageP;
 	AMPacket = UDPActiveMessageP;
 	Packet = UDPActiveMessageP;
-	PacketAcknowledgements = UDPActiveMessageP;
-		
+	PacketAcknowledgements = UDPActiveMessageP; // provendo
+	UDPActiveMessageP.sendDoneTimer->SD_Timer; // usando
+	UDPActiveMessageP.timerDelay->TimerDelay;
 }
 

@@ -19,8 +19,8 @@
 #define PORT 5000
 #define GROUP "224.0.0.1"
 #define INTERFACE "192.168.10.131"
-
-int socket_sender;
-int socket_receiver;
+#define SENDDONE_WAITTIME 100
+#define ACK_TRUE 1
+#define ACK_FALSE 0
 
 #endif /* UDPACTIVE_MESSAGE_H */

@@ -6,7 +6,10 @@
 <target/>
 <make-extras/>
 <includes>
-<include global="false" include="none" ncc="false" recursive="false">/usr/include</include>
+<include global="false" include="source" ncc="true" recursive="true">/usr/include</include>
+<include global="false" include="source" ncc="true" recursive="true">/home/wsn/git/TerraIx/nesCix/src/includes</include>
+<include global="false" include="source" ncc="true" recursive="true">/home/wsn/git/TerraIx/nesCix/src/types</include>
+<include global="false" include="source" ncc="true" recursive="false">/usr/src</include>
 </includes>
 <excludes>
 <exclude>.*\.svn.*</exclude>
