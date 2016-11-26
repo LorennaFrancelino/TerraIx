@@ -1,0 +1,442 @@
+second:0.5
+second:1.0
+second:1.5
+second:2.0
+second:2.5
+second:3.0
+second:3.5
+second:4.0
+second:4.5
+second:5.0
+second:5.5
+second:6.0
+second:6.5
+second:7.0
+second:7.5
+second:8.0
+DEBUG (1): VM:: call function 0
+DEBUG (1): VM:: enable track for label 89
+DEBUG (1): VM:: enable track for label 152
+DEBUG (1): VM:: equality test: (1 == 11) = FALSE 
+DEBUG (1): VM:: if/else: TRUE label=99; FALSE label=133.
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: call function 0
+DEBUG (11): VM:: enable track for label 89
+DEBUG (11): VM:: enable track for label 152
+DEBUG (11): VM:: equality test: (11 == 11) = TRUE 
+DEBUG (11): VM:: if/else: TRUE label=99; FALSE label=133.
+DEBUG (11): VM:: await timer 10000 for label 115
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:8.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:9.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:9.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:10.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:10.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:11.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:11.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:12.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:12.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:13.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:13.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:14.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:14.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:15.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:15.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:16.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 115
+DEBUG (11): Radio: Sending user msg AM_ID=145 to node 65535
+second:16.5
+DEBUG (1): Radio: Received Custom Msg AM=145 from 11
+DEBUG (1): VM:: reading input event data.
+DEBUG (1): VM:: emitting output event 5
+DEBUG (1): VM:: executing trail: label=133.
+DEBUG (11): VM:: await timer 10000 for label 115
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:17.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:17.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:18.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:18.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:19.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:19.5
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152
+second:20.0
+DEBUG (11): VM:: timer fired for label 152
+DEBUG (11): VM:: await timer 150 for label 152
+DEBUG (1): VM:: timer fired for label 152
+DEBUG (1): VM:: await timer 150 for label 152

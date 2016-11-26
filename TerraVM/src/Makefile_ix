@@ -9,7 +9,7 @@ OPT_1 = -fnesc-include=tos  -topdir=$(IXDIR)  -fnesc-scheduler=TinySchedulerC,Ti
 
 OPT_2 = $(CFLAGS) 
 
-OPT_3 = -I$(IXDIR)/includes -I$(IXDIR)/timer -I$(IXDIR)/interfaces -I$(IXDIR)/types -I$(IXDIR)/system -DMHZ=16
+OPT_3 = -I$(IXDIR)/includes -I$(IXDIR)/interfaces -I$(IXDIR)/types -I$(IXDIR)/system -DMHZ=16
 
 OPT_4=setTimer.o
 
