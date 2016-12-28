@@ -45,10 +45,18 @@ struct @exactlyonce { };
 #define platform_bootstrap() {}
 #endif
 
+/*
 #ifndef TOSSIM
 #define dbg(s, ...) 
 #define dbgerror(s, ...) 
 #define dbg_clear(s, ...) 
 #define dbgerror_clear(s, ...) 
-#endif
+*/
+
+extern void dbgIx(char* canal, char* format, ...);
+
+#define dbg dbgIx
+#define dbgerror(s, ...) 
+#define dbg_clear(s, ...) 
+#define dbgerror_clear(s, ...) 
 

@@ -18,7 +18,6 @@ GOALS := $(shell perl -e '$$_="$(GOALS)"; s{$(OptRE)\S*}{}g; print;')
 $(foreach opt,$(GoalOpts),$(eval $(opt)))
 
 INSTALL ?= 1
-IP ?= 192.168.0.1
 
 OPT1=-fnesc-include=tos -topdir=$(APPDIR)
 OPT2=-fnesc-scheduler=TinySchedulerC,TinySchedulerC.TaskBasic,TaskBasic,TaskBasic,runTask,postTask -o $(MAIN_EXE) -fnesc-separator=__ -Wall -Wshadow -Wnesc-all -fnesc-cfile=$(MAIN_APPC) --param max-inline-insns-single=100000 -fnesc-dump=wiring   -fnesc-dumpfile=$(DUMP_FILE) -lm -fnesc-no-debug 

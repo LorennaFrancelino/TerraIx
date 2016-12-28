@@ -3,7 +3,7 @@
 var short a = 5;
 var long b = 60;
 
-var float mod = b%a;
+//var float mod = b%a;
 
 await 5s;
 

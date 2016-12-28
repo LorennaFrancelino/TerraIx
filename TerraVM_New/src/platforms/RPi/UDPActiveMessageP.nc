@@ -125,7 +125,6 @@ implementation{
 			msg = (message_t*) dgram;
 	
 			if (call AMPacket.isForMe(msg)) {	
-				printf("Recebi mensagem %d\n", (*(nx_uint16_t*)dgram));
 				memcpy(&lastReceiveMessage, msg, sizeof(message_t));
 				printf("Message: %d Ack: %d\n", call AMPacket.source(msg), getHeader(msg)->ackID);
 
@@ -173,21 +172,24 @@ implementation{
 			printf("Nenhuma interface ethernet AF_INET foi encontrada\n");
 			return FAIL;
 		}
-		printf("Meu am_id: %d\n", TOS_NODE_ID);
+		printf("Meu endereço: %d\n", TOS_NODE_ID);
 	
 		// INIT RECEIVER
 		socket_receiver = socket(AF_INET, SOCK_DGRAM, 0);
 		if(socket_receiver < 0) {
+			printf("1\n");
 			return FAIL;
 		}
 	
 		if(setsockopt(socket_receiver, SOL_SOCKET, SO_REUSEADDR, &reuse, sizeof(reuse)) < 0) {
 			close(socket_receiver);
+			printf("2\n");
 			return FAIL;
 		}
 
 		if(fcntl(socket_receiver, F_SETFL, O_NONBLOCK) < 0) {
 			close(socket_receiver);
+			printf("3\n");
 			return FAIL;
 		}
 
@@ -197,6 +199,7 @@ implementation{
 		addr.sin_addr.s_addr =  INADDR_ANY;
 		if(bind(socket_receiver, (struct sockaddr*)&addr, sizeof(addr))) {
 			close(socket_receiver);
+			printf("4\n");
 			return FAIL;
 		}
 
@@ -204,6 +207,7 @@ implementation{
 		mcast_group.imr_interface.s_addr = INADDR_ANY; //inet_addr(interface);
 		if(setsockopt(socket_receiver, IPPROTO_IP, IP_ADD_MEMBERSHIP, (char*)&mcast_group, sizeof(mcast_group))) {
 			close(socket_receiver);
+			printf("5- %d\n", errno);
 			return FAIL;
 		}
 
@@ -228,12 +232,14 @@ implementation{
 		socket_sender = socket(AF_INET, SOCK_DGRAM, 0);
 		if(socket_sender < 0) {
 			printf("socket\n");
+			printf("6\n");
 			return FAIL;
 		}
 
 		if(setsockopt(socket_sender, SOL_SOCKET, SO_REUSEADDR, &one, sizeof(unsigned int)) < 0) {
 			close(socket_sender);
 			printf("setsockopt 1\n");
+			printf("7\n");
 			return FAIL;
 		}
 

@@ -36,14 +36,14 @@ c5 | 00031 c5 set_c short 9 5               | a = 5
 c6 | 00034 c6 set_c long 11 60              | b = 60
 0b | 00035 0b 
 3c | 00036 3c 
-95 | 00037 95 push_v short 9                | push a:short
-09 | 00038 09 
-96 | 00039 96 push_v long 11                | push b:long
-0b | 00040 0b 
-07 | 00041 07 mod                           | mod
-45 | 00042 45 cast long float (1)           | cast long float
-a3 | 00043 a3 pop float 15                  | pop mod
-0f | 00044 0f 
+00 | 00037 95 push_v short 9                | push a:short
+00 | 00038 09 
+00 | 00039 96 push_v long 11                | push b:long
+00 | 00040 0b 
+00 | 00041 07 mod                           | mod
+00 | 00042 45 cast long float (1)           | cast long float
+00 | 00043 a3 pop float 15                  | pop mod
+00 | 00044 0f 
 29 | 00045 29 clken_c 0 5000 10             | clock enable Awake_5000_10 5000msec
 03 | 00046 03 
 00 | 00047 00 
