@@ -1,0 +1,5 @@
+ROOT=/home/wsn/git/TerraIx/TerraVM_New/src
+OPT1="-fnesc-include=tos -I$ROOT -I$ROOT/interfaces -I$ROOT/system -I$ROOT/platforms/RPi"
+OPT2="-fnesc-scheduler=TinySchedulerC,TinySchedulerC.TaskBasic,TaskBasic,TaskBasic,runTask,postTask -fnesc-cfile=app.c" 
+OPT3="setTimer.o dbg.o"
+nescc $OPT1 $OPT2 $OPT3 $1.nc -o$1
